@@ -1,0 +1,81 @@
+ERROR - 2023-05-29 06:49:10 --> mysqli_sql_exception: Unknown column 'firstname' in 'field list' in C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cu...', 0)
+#1 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cu...')
+#2 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cu...')
+#3 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Models\HomeModel.php(27): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Controllers\Home.php(44): App\Models\HomeModel->addRoomAndContactInfo(Array)
+#6 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Home->addRoomAndContactInfoController()
+#7 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\...')
+#11 {main}
+CRITICAL - 2023-05-29 06:49:10 --> Unknown column 'firstname' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `customer` (`firstname`, `lastname`, `email`, `phone`, `address`, `confirm`) VALUES (\'first\', \'first\', \'first@gmail.com\', \'1234567890\', \'first address\', \'true\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `customer` (`firstname`, `lastname`, `email`, `phone`, `address`, `confirm`) VALUES (\'first\', \'first\', \'first@gmail.com\', \'1234567890\', \'first address\', \'true\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `customer` (`firstname`, `lastname`, `email`, `phone`, `address`, `confirm`) VALUES (\'first\', \'first\', \'first@gmail.com\', \'1234567890\', \'first address\', \'true\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `customer` (`firstname`, `lastname`, `email`, `phone`, `address`, `confirm`) VALUES (:firstname:, :lastname:, :email:, :phone:, :address:, :confirm:)', [...], false)
+ 5 APPPATH\Models\HomeModel.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Home.php(44): App\Models\HomeModel->addRoomAndContactInfo([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->addRoomAndContactInfoController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\OneDrive\\Desktop\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-05-29 06:51:30 --> mysqli_sql_exception: Unknown column 'firstname' in 'field list' in C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cu...', 0)
+#1 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cu...')
+#2 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cu...')
+#3 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Models\HomeModel.php(27): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Controllers\Home.php(43): App\Models\HomeModel->addRoomAndContactInfo(Array)
+#6 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Home->addRoomAndContactInfoController()
+#7 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\...')
+#11 {main}
+CRITICAL - 2023-05-29 06:51:30 --> Unknown column 'firstname' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `customer` (`firstname`, `lastname`, `email`, `phone`, `address`) VALUES (\'test\', \'test\', \'test@gmail.com\', \'1234567890\', \'test\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `customer` (`firstname`, `lastname`, `email`, `phone`, `address`) VALUES (\'test\', \'test\', \'test@gmail.com\', \'1234567890\', \'test\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `customer` (`firstname`, `lastname`, `email`, `phone`, `address`) VALUES (\'test\', \'test\', \'test@gmail.com\', \'1234567890\', \'test\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `customer` (`firstname`, `lastname`, `email`, `phone`, `address`) VALUES (:firstname:, :lastname:, :email:, :phone:, :address:)', [...], false)
+ 5 APPPATH\Models\HomeModel.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Home.php(43): App\Models\HomeModel->addRoomAndContactInfo([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->addRoomAndContactInfoController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\OneDrive\\Desktop\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-05-29 06:52:44 --> mysqli_sql_exception: Unknown column 'firstname' in 'field list' in C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cu...', 0)
+#1 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cu...')
+#2 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cu...')
+#3 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Models\HomeModel.php(27): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Controllers\Home.php(43): App\Models\HomeModel->addRoomAndContactInfo(Array)
+#6 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Home->addRoomAndContactInfoController()
+#7 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\...')
+#11 {main}
+CRITICAL - 2023-05-29 06:52:44 --> Unknown column 'firstname' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `customer` (`firstname`, `lastname`, `email`, `phone`, `address`) VALUES (\'test\', \'test\', \'test@gmail.com\', \'1234567890\', \'test\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `customer` (`firstname`, `lastname`, `email`, `phone`, `address`) VALUES (\'test\', \'test\', \'test@gmail.com\', \'1234567890\', \'test\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `customer` (`firstname`, `lastname`, `email`, `phone`, `address`) VALUES (\'test\', \'test\', \'test@gmail.com\', \'1234567890\', \'test\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `customer` (`firstname`, `lastname`, `email`, `phone`, `address`) VALUES (:firstname:, :lastname:, :email:, :phone:, :address:)', [...], false)
+ 5 APPPATH\Models\HomeModel.php(27): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Home.php(43): App\Models\HomeModel->addRoomAndContactInfo([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->addRoomAndContactInfoController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\OneDrive\\Desktop\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')

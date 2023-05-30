@@ -1,0 +1,217 @@
+ERROR - 2023-05-27 08:24:26 --> mysqli_sql_exception: Table 'reservation_db.products' doesn't exist in C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(14): App\Models\DashboardModel->fetchProduct()
+#6 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->fetchProductController()
+#7 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\...')
+#11 {main}
+CRITICAL - 2023-05-27 08:24:26 --> Table 'reservation_db.products' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `products`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `products`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `products`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 5 APPPATH\Models\DashboardModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dashboard.php(14): App\Models\DashboardModel->fetchProduct()
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->fetchProductController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\OneDrive\\Desktop\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-05-27 08:24:53 --> mysqli_sql_exception: Table 'reservation_db.products' doesn't exist in C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(14): App\Models\DashboardModel->fetchProduct()
+#6 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->fetchProductController()
+#7 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\...')
+#11 {main}
+CRITICAL - 2023-05-27 08:24:53 --> Table 'reservation_db.products' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `products`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `products`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `products`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 5 APPPATH\Models\DashboardModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dashboard.php(14): App\Models\DashboardModel->fetchProduct()
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->fetchProductController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\OneDrive\\Desktop\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-05-27 08:26:50 --> mysqli_sql_exception: Table 'reservation_db.products' doesn't exist in C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(14): App\Models\DashboardModel->fetchProduct()
+#6 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->fetchProductController()
+#7 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\...')
+#11 {main}
+CRITICAL - 2023-05-27 08:26:50 --> Table 'reservation_db.products' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `products`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `products`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `products`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 5 APPPATH\Models\DashboardModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dashboard.php(14): App\Models\DashboardModel->fetchProduct()
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->fetchProductController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\OneDrive\\Desktop\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-05-27 08:27:16 --> mysqli_sql_exception: Table 'reservation_db.products' doesn't exist in C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(14): App\Models\DashboardModel->fetchProduct()
+#6 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->fetchProductController()
+#7 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\...')
+#11 {main}
+CRITICAL - 2023-05-27 08:27:16 --> Table 'reservation_db.products' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `products`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `products`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `products`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 5 APPPATH\Models\DashboardModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dashboard.php(14): App\Models\DashboardModel->fetchProduct()
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->fetchProductController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\OneDrive\\Desktop\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-05-27 08:30:26 --> mysqli_sql_exception: Table 'reservation_db.products' doesn't exist in C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(14): App\Models\DashboardModel->fetchProduct()
+#6 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->fetchProductController()
+#7 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\...')
+#11 {main}
+CRITICAL - 2023-05-27 08:30:26 --> Table 'reservation_db.products' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `products`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `products`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `products`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 5 APPPATH\Models\DashboardModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dashboard.php(14): App\Models\DashboardModel->fetchProduct()
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->fetchProductController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\OneDrive\\Desktop\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-05-27 08:30:27 --> mysqli_sql_exception: Table 'reservation_db.products' doesn't exist in C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(14): App\Models\DashboardModel->fetchProduct()
+#6 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->fetchProductController()
+#7 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\...')
+#11 {main}
+CRITICAL - 2023-05-27 08:30:27 --> Table 'reservation_db.products' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `products`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `products`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `products`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 5 APPPATH\Models\DashboardModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dashboard.php(14): App\Models\DashboardModel->fetchProduct()
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->fetchProductController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\OneDrive\\Desktop\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-05-27 08:30:45 --> mysqli_sql_exception: Table 'reservation_db.products' doesn't exist in C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(14): App\Models\DashboardModel->fetchProduct()
+#6 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->fetchProductController()
+#7 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\marka\OneDrive\Desktop\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\...')
+#11 {main}
+CRITICAL - 2023-05-27 08:30:45 --> Table 'reservation_db.products' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `products`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `products`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `products`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 5 APPPATH\Models\DashboardModel.php(19): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\Dashboard.php(14): App\Models\DashboardModel->fetchProduct()
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->fetchProductController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\OneDrive\\Desktop\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
