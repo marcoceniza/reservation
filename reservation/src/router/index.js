@@ -29,6 +29,15 @@ const router = createRouter({
       }
     },
     {
+      path: '/admin/reservation',
+      name: 'adminReservation',
+      component: () => import('../views/pages/Reservation.vue'),
+      beforeEnter: (to, from, next) => {
+        if (!localStorage.getItem('user_info')) return next('/admin');
+        JSON.parse(localStorage.getItem('user_info')).user_type == 1 ? next() : next('/admin');
+      }
+    },
+    {
       path: '/admin/rooms',
       name: 'adminRooms',
       component: () => import('../views/pages/Rooms.vue'),

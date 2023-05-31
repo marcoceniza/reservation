@@ -11,11 +11,12 @@
         <section class="col-2">
             <ul>
                 <li><a href="javascript:;" @click="$router.push('/admin/dashboard')"><i class="bi bi-house-check-fill"></i> Dashboard</a></li>
+                <li><a href="javascript:;" @click="$router.push('/admin/reservation')"><i class="bi bi-calendar2-plus-fill"></i> Reservation</a></li>
                 <li><a href="javascript:;" @click="$router.push('/admin/rooms')"><i class="bi bi-building-fill-add"></i> Rooms</a></li>
             </ul>
         </section>
         <section class="col-10">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="d-flex justify-content-between align-items-center mt-3 mb-3">
                     <h5><i class="bi bi-building-fill-add"></i> Rooms</h5>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRoomModal"><i class="bi bi-plus-circle-fill"></i> Add</button>

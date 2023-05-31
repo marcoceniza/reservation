@@ -12,7 +12,7 @@
         <section class="col-10">
             <div class="container-fluid">
                 <div class="d-flex justify-content-between align-items-center mt-3 mb-3">
-                    <h5><i class="bi bi-calendar2-plus-fill"></i> Dashboard</h5>
+                    <h5><i class="bi bi-calendar2-plus-fill"></i> Reservation</h5>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRoomModal"><i class="bi bi-plus-circle-fill"></i> Add</button>
                 </div>
 
@@ -31,8 +31,9 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Room Name</th>
-                                <th>Category</th>
+                                <th>Capacity</th>
                                 <th>Price</th>
+                                <th>Category</th>
                                 <th>Start Date</th>
                                 <th>End Date</th>
                                 <th>Action</th>
@@ -42,13 +43,14 @@
                             <tr v-for="reserve in reserves" :key="reserve">
                                 <td>{{ reserve.room_type_id }}</td>
                                 <td>{{ reserve.name }}</td>
+                                <td>{{ reserve.capacity }}</td>
+                                <td>{{ reserve.price }}</td>
                                 <td>{{ formatCategory(reserve.category) }}</td>
-                                <td>${{ reserve.price }}</td>
-                                <td>--:--:--</td>
-                                <td>--:--:--</td>
-                                <td class="d-flex justify-content-center btn_action">
-                                    <a href="" class="btn btn-primary btn-sm" @click="viewSpecificReserve(reserve.room_type_id)" data-bs-toggle="modal" data-bs-target="#viewRoomModal"><i class="bi bi-eye-fill"></i> View</a>
-                                    <a href="" class="btn btn-success btn-sm" @click="getSpecificReserve(reserve.room_type_id)" data-bs-toggle="modal" data-bs-target="#updateRoomModal"><i class="bi bi-pencil-square"></i> Create</a>
+                                <td>{{ formatDate(reserve.created_at) }}</td>
+                                <td>{{ formatDate(reserve.updated_at) }}</td>
+                                <td class="d-flex justify-content-evenly btn_action">
+                                    <a href="" class="btn btn-primary btn-sm" @click="viewSpecificRoom(reserve.room_type_id)" data-bs-toggle="modal" data-bs-target="#viewRoomModal"><i class="bi bi-eye-fill"></i> View</a>
+                                    <a href="" class="btn btn-warning btn-sm" @click="getSpecificRoom(reserve.room_type_id)" data-bs-toggle="modal" data-bs-target="#updateRoomModal"><i class="bi bi-pencil-square"></i> Edit</a>
                                     <a href="" class="btn btn-danger btn-sm" @click="getConfirmDeleteID = reserve.room_type_id" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal"><i class="bi bi-trash-fill"></i> Delete</a>
                                 </td>
                             </tr>
@@ -73,15 +75,15 @@
             </div>
 
             <div class="modal-body">
-                <figure><img class="img-fluid rounded mx-auto d-block" :src="photoBaseURL + viewReserve.photo" alt=""></figure>
+                <figure><img class="img-fluid rounded mx-auto d-block" :src="photoBaseURL + viewRoom.photo" alt=""></figure>
                 <ul class="list-group">
-                    <li class="list-group-item">ID: {{ viewReserve.room_type_id }}</li>
-                    <li class="list-group-item">Name: {{ viewReserve.name }}</li>
-                    <li class="list-group-item">Capacity: {{ viewReserve.capacity }} pax</li>
-                    <li class="list-group-item">Price: ${{ viewReserve.price }}</li>
-                    <li class="list-group-item">Category: {{ formatCategory(viewReserve.category) }}</li>
-                    <li class="list-group-item">Location: {{ viewReserve.price }}</li>
-                    <li class="list-group-item">Created At: {{ formatDate(viewReserve.created_at) }}</li>
+                    <li class="list-group-item">ID: {{ viewRoom.room_type_id }}</li>
+                    <li class="list-group-item">Name: {{ viewRoom.name }}</li>
+                    <li class="list-group-item">Capacity: {{ viewRoom.capacity }} pax</li>
+                    <li class="list-group-item">Price: ${{ viewRoom.price }}</li>
+                    <li class="list-group-item">Category: {{ formatCategory(viewRoom.category) }}</li>
+                    <li class="list-group-item">Location: {{ viewRoom.price }}</li>
+                    <li class="list-group-item">Created At: {{ formatDate(viewRoom.created_at) }}</li>
                 </ul>
             </div>
 
@@ -206,7 +208,7 @@ export default {
             deleteMessage: '',
             deleteConfirmMessage: '',
             reserves: '',
-            viewReserve: '',
+            viewRoom: '',
             getRoomID: '',
             roomPhoto: '',
             getConfirmDeleteID: '',
@@ -240,10 +242,10 @@ export default {
                 }
             });
         },
-        viewSpecificReserve(ID) {
-            this.reserves.forEach(res => {
+        viewSpecificRoom(ID) {
+            this.rooms.forEach(res => {
                 if(res.room_type_id === ID) {
-                    this.viewReserve = res;
+                    this.viewRoom = res;
                 }
             });
         },

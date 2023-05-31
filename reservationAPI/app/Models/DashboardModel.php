@@ -16,8 +16,10 @@ class DashboardModel extends Model
 
     public function fetchRoom()
     {
-        $query = $this->roomTB->get();
-        return $query->getResult();
+        $query = $this->roomTB->join('customer', 'customer.room_type_id = room_type.room_type_id')
+                              ->get()
+                              ->getResult();
+        return $query;
     }
 
     public function addRoom($data)
