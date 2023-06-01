@@ -42,6 +42,10 @@ $routes->post('deleteRoom', 'Dashboard::deleteRoomController');
 // Home
 $routes->post('reserveRoom', 'Home::addRoomAndContactInfoController');
 
+// Schedule
+$routes->get('fetchSchedule', 'Schedule::fetchScheduleController');
+$routes->post('addSchedule', 'Schedule::addScheduleController');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

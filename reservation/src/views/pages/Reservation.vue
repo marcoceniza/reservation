@@ -12,8 +12,7 @@
         <section class="col-10">
             <div class="container-fluid">
                 <div class="d-flex justify-content-between align-items-center mt-3 mb-3">
-                    <h5><i class="bi bi-calendar2-plus-fill"></i> Reservation</h5>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRoomModal"><i class="bi bi-plus-circle-fill"></i> Add</button>
+                    <h5><i class="bi bi-calendar2-plus-fill"></i> Dashboard</h5>
                 </div>
 
                 <div v-if="deleteMessage" :class="{'alert': true, 'alert-danger': !deleteMessage.isSuccess, 'alert-success': deleteMessage.isSuccess}">
@@ -25,33 +24,31 @@
                     <div class="spinner-grow text-muted spinner-grow-sm"></div>
                     <div class="spinner-grow text-muted spinner-grow-sm"></div>
                 </div>
-                <div v-else-if="reserves.length !== 0" class="table-responsive">
+                <div v-else-if="schedules.length !== 0" class="table-responsive">
                     <DataTable class="table table-striped" id="myTable">
                         <thead class="table-dark">
                             <tr>
                                 <th>ID</th>
                                 <th>Room Name</th>
-                                <th>Capacity</th>
-                                <th>Price</th>
                                 <th>Category</th>
+                                <th>Price</th>
                                 <th>Start Date</th>
                                 <th>End Date</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="reserve in reserves" :key="reserve">
-                                <td>{{ reserve.room_type_id }}</td>
-                                <td>{{ reserve.name }}</td>
-                                <td>{{ reserve.capacity }}</td>
-                                <td>{{ reserve.price }}</td>
-                                <td>{{ formatCategory(reserve.category) }}</td>
-                                <td>{{ formatDate(reserve.created_at) }}</td>
-                                <td>{{ formatDate(reserve.updated_at) }}</td>
-                                <td class="d-flex justify-content-evenly btn_action">
-                                    <a href="" class="btn btn-primary btn-sm" @click="viewSpecificRoom(reserve.room_type_id)" data-bs-toggle="modal" data-bs-target="#viewRoomModal"><i class="bi bi-eye-fill"></i> View</a>
-                                    <a href="" class="btn btn-warning btn-sm" @click="getSpecificRoom(reserve.room_type_id)" data-bs-toggle="modal" data-bs-target="#updateRoomModal"><i class="bi bi-pencil-square"></i> Edit</a>
-                                    <a href="" class="btn btn-danger btn-sm" @click="getConfirmDeleteID = reserve.room_type_id" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal"><i class="bi bi-trash-fill"></i> Delete</a>
+                            <tr v-for="schedule in schedules" :key="schedule">
+                                <td>{{ schedule.room_type_id }}</td>
+                                <td>{{ schedule.name }}</td>
+                                <td>{{ formatCategory(schedule.category) }}</td>
+                                <td>${{ schedule.price }}</td>
+                                <td>{{ formatDate(schedule.start_date) }}</td>
+                                <td>{{ formatDate(schedule.end_date) }}</td>
+                                <td class="d-flex justify-content-center btn_action">
+                                    <a href="" class="btn btn-primary btn-sm" @click="viewSpecificSchedule(schedule.room_type_id, schedule.customer_id)" data-bs-toggle="modal" data-bs-target="#viewReserveRoomModal"><i class="bi bi-eye-fill"></i> View</a>
+                                    <a href="" class="btn btn-warning btn-sm" @click="createDateSchedule(schedule.room_type_id)" data-bs-toggle="modal" data-bs-target="#createDateScheduleModal"><i class="bi bi-pencil-square"></i> Edit</a>
+                                    <a href="" class="btn btn-danger btn-sm" @click="getConfirmDeleteID = schedule.room_type_id" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal"><i class="bi bi-trash-fill"></i> Delete</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -64,8 +61,8 @@
         </section>
     </div>
 
-    <!-- Modal for Viewing Room -->
-    <div class="modal fade" id="viewRoomModal">
+    <!-- Modal for Reserve Room -->
+    <div class="modal fade" id="viewReserveRoomModal">
         <div class="modal-dialog">
             <div class="modal-content">
 
@@ -75,15 +72,17 @@
             </div>
 
             <div class="modal-body">
-                <figure><img class="img-fluid rounded mx-auto d-block" :src="photoBaseURL + viewRoom.photo" alt=""></figure>
+                <figure><img class="img-fluid rounded mx-auto d-block" :src="photoBaseURL + viewReserve.photo" alt=""></figure>
                 <ul class="list-group">
-                    <li class="list-group-item">ID: {{ viewRoom.room_type_id }}</li>
-                    <li class="list-group-item">Name: {{ viewRoom.name }}</li>
-                    <li class="list-group-item">Capacity: {{ viewRoom.capacity }} pax</li>
-                    <li class="list-group-item">Price: ${{ viewRoom.price }}</li>
-                    <li class="list-group-item">Category: {{ formatCategory(viewRoom.category) }}</li>
-                    <li class="list-group-item">Location: {{ viewRoom.price }}</li>
-                    <li class="list-group-item">Created At: {{ formatDate(viewRoom.created_at) }}</li>
+                    <li class="list-group-item">ID: {{ viewReserve.room_type_id }}</li>
+                    <li class="list-group-item">Name: {{ viewReserve.name }}</li>
+                    <li class="list-group-item">Capacity: {{ viewReserve.capacity }} pax</li>
+                    <li class="list-group-item">Price: ${{ viewReserve.price }}</li>
+                    <li class="list-group-item">Category: {{ formatCategory(viewReserve.category) }}</li>
+                    <li class="list-group-item">Location: {{ viewReserve.price }}</li>
+                    <li class="list-group-item">Created At: {{ formatDate(viewReserve.created_at) }}</li>
+                    <li class="list-group-item">Start Date: --:--:--</li>
+                    <li class="list-group-item">End Date: --:--:--</li>
                 </ul>
             </div>
 
@@ -91,13 +90,13 @@
         </div>
     </div>
 
-    <!-- Modal for Adding Room -->
-    <div class="modal fade" id="addRoomModal">
+    <!-- Modal for Creating Schedule -->
+    <div class="modal fade" id="createDateScheduleModal">
         <div class="modal-dialog">
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h5 class="modal-title"><i class="bi bi-plus-circle-fill"></i> Add New Room</h5>
+                    <h5 class="modal-title"><i class="bi bi-calendar-plus-fill"></i> Schedule Date</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 
@@ -107,42 +106,23 @@
                     </div>
                     <form>
                         <div class="mb-3 mt-3">
-                            <label for="name" class="form-label">Name: <span class="requiredInput">*</span></label>
-                            <input type="text" class="form-control" placeholder="Name" v-model="name">
-                        </div>
-                        <div class="mb-3 mt-3">
                             <div class="d-flex justify-content-between">
                                 <section>
-                                    <label for="capacity" class="form-label">Capacity: <span class="requiredInput">*</span></label>
-                                    <input type="text" class="form-control" placeholder="Capacity" v-model="capacity">
+                                    <label for="startDate" class="form-label">Start Date: <span class="requiredInput">*</span></label>
+                                    <input type="datetime-local" class="form-control" v-model="startDate">
                                 </section>
                                 <section>
-                                    <label for="price" class="form-label">Price: <span class="requiredInput">*</span></label>
-                                    <input type="text" class="form-control" placeholder="Price" v-model="price">
+                                    <label for="endDate" class="form-label">End Date: <span class="requiredInput">*</span></label>
+                                    <input type="datetime-local" class="form-control" v-model="endDate">
                                 </section>
                             </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Category: <span class="requiredInput">*</span></label>
-                            <select class="form-control" v-model="category">
-                                <option value="">Please select</option>
-                                <option v-for="option in categoryOptions" :key="option" :value="option.value">{{ option.label }}</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="location" class="form-label">Location: <span class="requiredInput">*</span></label>
-                            <input type="text" class="form-control" placeholder="Location" v-model="location">
-                        </div>
-                        <div class="mb-3">
-                            <label for="price" class="form-label">Photo: <span class="requiredInput">*</span></label>
-                            <input type="file" class="form-control" @change="handleUpload">
                         </div>
                         <div class="d-grid">
                             <button v-if="loadingState" class="btn btn-primary btn-block" disabled>
                                 <span class="spinner-grow spinner-grow-sm"></span>
                                 Adding...
                             </button>
-                            <button v-else @click.prevent="addRoom" type="submit" class="btn btn-primary btn-block">Add</button>
+                            <button v-else @click.prevent="createDateSchedule" type="submit" class="btn btn-primary btn-block">Submit</button>
                         </div>
                     </form> 
                 </div>
@@ -186,7 +166,7 @@
 import axiosRes from '@/main';
 import DataTable from 'datatables.net-vue3';
 import DataTablesCore from 'datatables.net-bs5';
-import Nav from '../../components/Nav.vue';
+import Nav from '@/components/Nav.vue';
 
 export default {
     name: 'adminReservation',
@@ -195,6 +175,8 @@ export default {
         return {
             loadingState: false,
             loadingState2: true,
+            startDate: '',
+            endDate: '',
             name: '',
             capacity: '',
             price: '',
@@ -208,9 +190,10 @@ export default {
             deleteMessage: '',
             deleteConfirmMessage: '',
             reserves: '',
-            viewRoom: '',
+            viewReserve: '',
             getRoomID: '',
             roomPhoto: '',
+            schedules: '',
             getConfirmDeleteID: '',
             photoBaseURL: 'http://localhost:8080/uploads/'
         }
@@ -242,24 +225,22 @@ export default {
                 }
             });
         },
-        viewSpecificRoom(ID) {
-            this.rooms.forEach(res => {
-                if(res.room_type_id === ID) {
-                    this.viewRoom = res;
+        viewSpecificSchedule(room_ID, customer_ID) {
+            this.schedules.forEach(res => {
+                if(res.room_type_id === room_ID && res.customer_id === customer_ID) {
+                    this.viewReserve = res;
                 }
             });
         },
-        addRoom() {
+        createDateSchedule() {
             this.loadingState = true;
             const formData = new FormData();
-            formData.append('name', this.name);
-            formData.append('capacity', this.capacity);
-            formData.append('price', this.price);
-            formData.append('category', this.category);
-            formData.append('location', this.location);
-            formData.append('photo', this.roomPhoto);
+            formData.append('customerID', this.viewReserve.customer_id);
+            formData.append('roomID', this.viewReserve.room_type_id);
+            formData.append('startDate', this.startDate);
+            formData.append('endDate', this.endDate);
 
-            axiosRes.post('/addRoom', formData).then(res => {
+            axiosRes.post('/addSchedule', formData).then(res => {
                 this.loadingState = false;
                 this.resultMessage = {
                     message: res.data.result,
@@ -267,12 +248,8 @@ export default {
                 };
 
                 if(res.data.success) {
-                    this.name = '';
-                    this.capacity = '';
-                    this.price = '';
-                    this.category = '';
-                    this.location = '';
-                    this.roomPhoto = '';
+                    this.startDate = '';
+                    this.endDate = '';
 
                     setTimeout(() => {
                         window.location.reload();
@@ -295,9 +272,9 @@ export default {
         }
     },
     mounted() {
-        axiosRes.get('/fetchRoom').then(res => {
+        axiosRes.get('/fetchSchedule').then(res => {
             this.loadingState2 = false;
-            this.reserves = res.data.result;
+            this.schedules = res.data.result;
         });
 
         DataTable.use(DataTablesCore);
@@ -319,7 +296,7 @@ thead tr th{text-align: center;}
 .row{height: 100vh;}
 .dash_con section:first-child{box-shadow: 0px 0px 12px #d7d7d7;padding: 0;}
 .dash_con section ul{list-style-type: none; padding: 0;}
-.dash_con section ul li a{display: block; text-decoration: none; padding: 12px 20px; background: #0d6efd; color: #fff; border: 1px solid #adceff;}
+.dash_con section ul li a{display: block; text-decoration: none; padding: 12px 30px; background: #0d6efd; color: #fff; border: 1px solid #adceff;}
 .dash_con section ul li a:first-child{border-bottom: none;}
 .dash_con section ul li a:hover{opacity: 0.8;}
 .dash_con section ul li a i{padding-right: 5px;}
