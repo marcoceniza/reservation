@@ -34,6 +34,7 @@
                                 <th>Price</th>
                                 <th>Start Date</th>
                                 <th>End Date</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -45,6 +46,7 @@
                                 <td>${{ schedule.price }}</td>
                                 <td>{{ formatDate(schedule.start_date) }}</td>
                                 <td>{{ formatDate(schedule.end_date) }}</td>
+                                <td>{{ formatStatus(schedule.status, schedule.start_date, schedule.end_date) }}</td>
                                 <td class="d-flex justify-content-center btn_action">
                                     <a href="" class="btn btn-primary btn-sm" @click="viewSpecificSchedule(schedule.room_type_id, schedule.customer_id)" data-bs-toggle="modal" data-bs-target="#viewReserveRoomModal"><i class="bi bi-eye-fill"></i> View</a>
                                     <a href="" class="btn btn-warning btn-sm" @click="createDateSchedule(schedule.room_type_id)" data-bs-toggle="modal" data-bs-target="#createDateScheduleModal"><i class="bi bi-pencil-square"></i> Edit</a>
@@ -180,18 +182,11 @@ export default {
             name: '',
             capacity: '',
             price: '',
-            category: '',
-            categoryOptions: [
-                { value: 1, label: 'With Aircon' },
-                { value: 0, label: 'Without Aircon' }
-            ],
             location: '',
             resultMessage: '',
             deleteMessage: '',
             deleteConfirmMessage: '',
-            reserves: '',
             viewReserve: '',
-            getRoomID: '',
             roomPhoto: '',
             schedules: '',
             getConfirmDeleteID: '',
@@ -199,6 +194,16 @@ export default {
         }
     },
     methods: {
+        formatStatus(num, sDate, eDate) {
+            let convertToNumber = parseInt(num);
+            let currentDate = new Date();
+            let startDate = new Date(sDate);
+            let endDate = new Date(eDate);
+
+            if(convertToNumber == 0 && currentDate < startDate) return num = 'Comming';
+            else if(convertToNumber == 1 && currentDate > startDate) return num = 'Ongoing';
+            else return num = 'Done';
+        },
         formatCategory(num) {
             let convertToNumber = parseInt(num);
             if(convertToNumber == 1) return num = 'With Aircon';
