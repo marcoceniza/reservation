@@ -7,12 +7,13 @@
                 <li><a href="javascript:;" @click="$router.push('/admin/dashboard')"><i class="bi bi-house-check-fill"></i> Dashboard</a></li>
                 <li><a href="javascript:;" @click="$router.push('/admin/reservation')"><i class="bi bi-calendar2-plus-fill"></i> Reservation</a></li>
                 <li><a href="javascript:;" @click="$router.push('/admin/rooms')"><i class="bi bi-building-fill-add"></i> Rooms</a></li>
+                <li><a href="javascript:;" @click="$router.push('/admin/customers')"><i class="bi bi-people-fill"></i> Customers</a></li>
             </ul>
         </section>
         <section class="col-10">
             <div class="container-fluid">
                 <div class="d-flex justify-content-between align-items-center mt-3 mb-3">
-                    <h5><i class="bi bi-calendar2-plus-fill"></i> Dashboard</h5>
+                    <h5><i class="bi bi-house-check-fill"></i> Dashboard</h5>
                 </div>
 
                 <div v-if="deleteMessage" :class="{'alert': true, 'alert-danger': !deleteMessage.isSuccess, 'alert-success': deleteMessage.isSuccess}">
@@ -48,7 +49,7 @@
                                 <td class="d-flex justify-content-center btn_action">
                                     <a href="" class="btn btn-primary btn-sm" @click="viewSpecificSchedule(room.room_type_id)" data-bs-toggle="modal" data-bs-target="#viewReserveRoomModal"><i class="bi bi-eye-fill"></i> View</a>
                                     <a href="" class="btn btn-success btn-sm" @click="getIDs(room.customer_id, room.room_type_id)" data-bs-toggle="modal" data-bs-target="#createDateScheduleModal"><i class="bi bi-pencil-square"></i> Create</a>
-                                    <a href="" class="btn btn-danger btn-sm" @click="getConfirmDeleteID = room.room_type_id" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal"><i class="bi bi-trash-fill"></i> Delete</a>
+                                    <a href="" class="btn btn-danger btn-sm" @click="getConfirmDeleteID = room.customer_id" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal"><i class="bi bi-trash-fill"></i> Delete</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -67,7 +68,7 @@
             <div class="modal-content">
 
             <div class="modal-header">
-                <h4 class="modal-title">Room Details</h4>
+                <h5 class="modal-title"><i class="bi bi-list-check"></i> Room Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
@@ -75,14 +76,20 @@
                 <figure><img class="img-fluid rounded mx-auto d-block" :src="photoBaseURL + viewReserve.photo" alt=""></figure>
                 <ul class="list-group">
                     <li class="list-group-item">ID: {{ viewReserve.room_type_id }}</li>
-                    <li class="list-group-item">Name: {{ viewReserve.name }}</li>
+                    <li class="list-group-item">Room Name: {{ viewReserve.name }}</li>
                     <li class="list-group-item">Capacity: {{ viewReserve.capacity }} pax</li>
                     <li class="list-group-item">Price: ${{ viewReserve.price }}</li>
                     <li class="list-group-item">Category: {{ formatCategory(viewReserve.category) }}</li>
                     <li class="list-group-item">Location: {{ viewReserve.price }}</li>
                     <li class="list-group-item">Created At: {{ formatDate(viewReserve.created_at) }}</li>
-                    <li class="list-group-item">Start Date: --:--:--</li>
-                    <li class="list-group-item">End Date: --:--:--</li>
+                </ul>
+
+                <h5 class="mt-4 mb-3"><i class="bi bi-info-circle-fill"></i> Customer Info</h5>
+                <ul class="list-group">
+                    <li class="list-group-item">First Name: {{ viewReserve.first_name }}</li>
+                    <li class="list-group-item">Last Name: {{ viewReserve.last_name }}</li>
+                    <li class="list-group-item">Phone: {{ viewReserve.phone }}</li>
+                    <li class="list-group-item">Email: {{ viewReserve.email }}</li>
                 </ul>
             </div>
 
@@ -120,7 +127,7 @@
                         <div class="d-grid">
                             <button v-if="loadingState" class="btn btn-primary btn-block" disabled>
                                 <span class="spinner-grow spinner-grow-sm"></span>
-                                Adding...
+                                Creating...
                             </button>
                             <button v-else @click.prevent="createDateSchedule" type="submit" class="btn btn-primary btn-block">Submit</button>
                         </div>
@@ -137,7 +144,7 @@
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h4 class="modal-title">Delete Message</h4>
+                    <h4 class="modal-title"><i class="bi bi-trash-fill"></i> Delete Message</h4>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 
@@ -226,7 +233,7 @@ export default {
         deleteRoom() {
             this.loadingState = true;
             const formData = new FormData();
-            formData.append('roomID', this.getConfirmDeleteID);
+            formData.append('customerID', this.getConfirmDeleteID);
 
             axiosRes.post('/deleteRoom', formData).then(res => {
                 this.loadingState = false;
@@ -296,6 +303,8 @@ export default {
         axiosRes.get('/fetchRoom').then(res => {
             this.loadingState2 = false;
             this.rooms = res.data.result;
+
+            console.log(this.rooms);
         });
 
         DataTable.use(DataTablesCore);

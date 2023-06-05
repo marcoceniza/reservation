@@ -188,6 +188,14 @@ export default {
             formData.append('phone', this.phone);
             formData.append('confirm', this.confirmReserve);
 
+            if(!this.confirmReserve) {
+                this.addCustomerMessage = {
+                    message: 'All Fields are Required!',
+                    isSuccess: false
+                };
+                return this.loadingState = false;
+            }
+
             axiosRes.post('/reserveRoom', formData).then(res => {
                 this.loadingState = false;
                 this.addCustomerMessage = {

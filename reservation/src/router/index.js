@@ -46,6 +46,15 @@ const router = createRouter({
         JSON.parse(localStorage.getItem('user_info')).user_type == 1 ? next() : next('/admin');
       }
     },
+    {
+      path: '/admin/customers',
+      name: 'adminCustomers',
+      component: () => import('../views/pages/Customers.vue'),
+      beforeEnter: (to, from, next) => {
+        if (!localStorage.getItem('user_info')) return next('/admin');
+        JSON.parse(localStorage.getItem('user_info')).user_type == 1 ? next() : next('/admin');
+      }
+    },
   ]
 })
 

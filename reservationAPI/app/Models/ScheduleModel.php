@@ -29,4 +29,10 @@ class ScheduleModel extends Model
         $query = $this->schedule->insert($data);
         return $query;
     }
+
+    public function updateSchedule($id, $data)
+    {
+        $query = $this->schedule->where('reservation_id', $id)->update($data);
+        return $query;
+    }
 }

@@ -19,7 +19,7 @@
         <section class="col-10">
             <div class="container-fluid">
                 <div class="d-flex justify-content-between align-items-center mt-3 mb-3">
-                    <h5><i class="bi bi-building-fill-add"></i> Rooms</h5>
+                    <h5><i class="bi bi-people-fill"></i> Customers</h5>
                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRoomModal"><i class="bi bi-plus-circle-fill"></i> Add</button>
                 </div>
 

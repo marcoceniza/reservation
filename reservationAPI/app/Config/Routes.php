@@ -48,6 +48,7 @@ $routes->get('fetchRooms', 'Rooms::fetchRoomController');
 // Schedule
 $routes->get('fetchSchedule', 'Schedule::fetchScheduleController');
 $routes->post('addSchedule', 'Schedule::addScheduleController');
+$routes->post('updateSchedule', 'Schedule::updateScheduleController');
 
 // set Status
 $routes->post('setStatus', 'Dashboard::setCreatedStatusController');

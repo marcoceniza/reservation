@@ -7,12 +7,13 @@
                 <li><a href="javascript:;" @click="$router.push('/admin/dashboard')"><i class="bi bi-house-check-fill"></i> Dashboard</a></li>
                 <li><a href="javascript:;" @click="$router.push('/admin/reservation')"><i class="bi bi-calendar2-plus-fill"></i> Reservation</a></li>
                 <li><a href="javascript:;" @click="$router.push('/admin/rooms')"><i class="bi bi-building-fill-add"></i> Rooms</a></li>
+                <li><a href="javascript:;" @click="$router.push('/admin/customers')"><i class="bi bi-people-fill"></i> Customers</a></li>
             </ul>
         </section>
         <section class="col-10">
             <div class="container-fluid">
                 <div class="d-flex justify-content-between align-items-center mt-3 mb-3">
-                    <h5><i class="bi bi-calendar2-plus-fill"></i> Dashboard</h5>
+                    <h5><i class="bi bi-calendar2-plus-fill"></i> Reservation</h5>
                 </div>
 
                 <div v-if="deleteMessage" :class="{'alert': true, 'alert-danger': !deleteMessage.isSuccess, 'alert-success': deleteMessage.isSuccess}">
@@ -49,8 +50,7 @@
                                 <td>{{ formatStatus(schedule.status, schedule.start_date, schedule.end_date) }}</td>
                                 <td class="d-flex justify-content-center btn_action">
                                     <a href="" class="btn btn-primary btn-sm" @click="viewSpecificSchedule(schedule.room_type_id, schedule.customer_id)" data-bs-toggle="modal" data-bs-target="#viewReserveRoomModal"><i class="bi bi-eye-fill"></i> View</a>
-                                    <a href="" class="btn btn-warning btn-sm" @click="createDateSchedule(schedule.room_type_id)" data-bs-toggle="modal" data-bs-target="#createDateScheduleModal"><i class="bi bi-pencil-square"></i> Edit</a>
-                                    <a href="" class="btn btn-danger btn-sm" @click="getConfirmDeleteID = schedule.room_type_id" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal"><i class="bi bi-trash-fill"></i> Delete</a>
+                                    <a href="" class="btn btn-warning btn-sm" @click="getUpdateID = schedule.reservation_id" data-bs-toggle="modal" data-bs-target="#createDateScheduleModal"><i class="bi bi-pencil-square"></i> Edit</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -69,7 +69,7 @@
             <div class="modal-content">
 
             <div class="modal-header">
-                <h4 class="modal-title">Room Details</h4>
+                <h5 class="modal-title"><i class="bi bi-list-check"></i> Room Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
@@ -83,8 +83,17 @@
                     <li class="list-group-item">Category: {{ formatCategory(viewReserve.category) }}</li>
                     <li class="list-group-item">Location: {{ viewReserve.price }}</li>
                     <li class="list-group-item">Created At: {{ formatDate(viewReserve.created_at) }}</li>
-                    <li class="list-group-item">Start Date: --:--:--</li>
-                    <li class="list-group-item">End Date: --:--:--</li>
+                    <li class="list-group-item">Start Date: {{ formatDate(viewReserve.start_date) }}</li>
+                    <li class="list-group-item">End Date: {{ formatDate(viewReserve.end_date) }} </li>
+                    <li class="list-group-item">Status: {{ formatStatus(viewReserve.status, viewReserve.start_date) }} </li>
+                </ul>
+
+                <h5 class="mt-4 mb-3"><i class="bi bi-info-circle-fill"></i> Customer Info</h5>
+                <ul class="list-group">
+                    <li class="list-group-item">First Name: {{ viewReserve.first_name }}</li>
+                    <li class="list-group-item">Last Name: {{ viewReserve.last_name }}</li>
+                    <li class="list-group-item">Phone: {{ viewReserve.phone }}</li>
+                    <li class="list-group-item">Email: {{ viewReserve.email }}</li>
                 </ul>
             </div>
 
@@ -92,7 +101,7 @@
         </div>
     </div>
 
-    <!-- Modal for Creating Schedule -->
+    <!-- Modal for Updating Schedule -->
     <div class="modal fade" id="createDateScheduleModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -122,9 +131,9 @@
                         <div class="d-grid">
                             <button v-if="loadingState" class="btn btn-primary btn-block" disabled>
                                 <span class="spinner-grow spinner-grow-sm"></span>
-                                Adding...
+                                Updating...
                             </button>
-                            <button v-else @click.prevent="createDateSchedule" type="submit" class="btn btn-primary btn-block">Submit</button>
+                            <button v-else @click.prevent="updateDateSchedule" type="submit" class="btn btn-primary btn-block">Submit</button>
                         </div>
                     </form> 
                 </div>
@@ -133,35 +142,6 @@
         </div>
     </div>
 
-    <!-- Modal for Confirm Delete -->
-    <div class="modal fade" id="confirmDeleteModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h4 class="modal-title">Delete Message</h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-
-                <div class="modal-body">
-                    <div v-if="deleteConfirmMessage" :class="{'alert': true, 'alert-danger': !deleteConfirmMessage.isSuccess, 'alert-success': deleteConfirmMessage.isSuccess}">
-                        <strong>{{ deleteConfirmMessage.message }}</strong>
-                    </div>
-                    <p>Are you sure you want to delete?</p>
-                </div>
-
-                <div class="modal-footer">
-                    <button v-if="loadingState" class="btn btn-primary" disabled>
-                        <span class="spinner-grow spinner-grow-sm"></span>
-                        Deleting...
-                    </button>
-                    <button v-else @click.prevent="deleteRoom" type="submit" class="btn btn-primary btn-block">Delete</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
 </template>
 
 <script>
@@ -184,21 +164,19 @@ export default {
             price: '',
             location: '',
             resultMessage: '',
-            deleteMessage: '',
-            deleteConfirmMessage: '',
             viewReserve: '',
             roomPhoto: '',
             schedules: '',
-            getConfirmDeleteID: '',
+            getUpdateID: '',
             photoBaseURL: 'http://localhost:8080/uploads/'
         }
     },
     methods: {
-        formatStatus(num, sDate, eDate) {
+        formatStatus(num, sDate) {
             let convertToNumber = parseInt(num);
             let currentDate = new Date();
             let startDate = new Date(sDate);
-            let endDate = new Date(eDate);
+            // let endDate = new Date(eDate);
 
             if(convertToNumber == 0 && currentDate < startDate) return num = 'Comming';
             else if(convertToNumber == 1 && currentDate > startDate) return num = 'Ongoing';
@@ -209,27 +187,6 @@ export default {
             if(convertToNumber == 1) return num = 'With Aircon';
             else return num = 'Without Aircon';
         },
-        deleteRoom() {
-            this.loadingState = true;
-            const formData = new FormData();
-            formData.append('roomID', this.getConfirmDeleteID);
-
-            axiosRes.post('/deleteRoom', formData).then(res => {
-                this.loadingState = false;
-                if(res.data.success) {
-                    this.deleteConfirmMessage = {
-                        message: res.data.result,
-                        isSuccess: true
-                    };
-
-                    setTimeout(() => {
-                        window.location.reload();
-                    }, 2000);
-                }else {
-                    return;
-                }
-            });
-        },
         viewSpecificSchedule(room_ID, customer_ID) {
             this.schedules.forEach(res => {
                 if(res.room_type_id === room_ID && res.customer_id === customer_ID) {
@@ -237,15 +194,14 @@ export default {
                 }
             });
         },
-        createDateSchedule() {
+        updateDateSchedule() {
             this.loadingState = true;
             const formData = new FormData();
-            formData.append('customerID', this.viewReserve.customer_id);
-            formData.append('roomID', this.viewReserve.room_type_id);
+            formData.append('reserveID', this.getUpdateID);
             formData.append('startDate', this.startDate);
             formData.append('endDate', this.endDate);
 
-            axiosRes.post('/addSchedule', formData).then(res => {
+            axiosRes.post('/updateSchedule', formData).then(res => {
                 this.loadingState = false;
                 this.resultMessage = {
                     message: res.data.result,

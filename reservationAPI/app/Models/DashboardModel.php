@@ -6,7 +6,6 @@ use CodeIgniter\Model;
 
 class DashboardModel extends Model
 {
-    protected $reserveRoomTB;
     protected $customerDB;
 
     public function __construct()
@@ -31,19 +30,19 @@ class DashboardModel extends Model
 
     public function addRoom($data)
     {
-        $query = $this->reserveRoomTB->insert($data);
+        $query = $this->customerDB->insert($data);
         return $query;
     }
 
     public function updateRoom($id, $data)
     {
-        $query = $this->reserveRoomTB->where('room_type_id', $id);
+        $query = $this->customerDB->where('room_type_id', $id);
         return $query->update($data);
     }
 
     public function deleteRoom($id)
     {
-        $query = $this->reserveRoomTB->where('room_type_id', $id);
+        $query = $this->customerDB->where('customer_id', $id);
         return $query->delete();
     }
 }

@@ -127,10 +127,10 @@ class Dashboard extends BaseController
     {
         $model = new DashboardModel();
 
-        $post = $this->request->getPost(['roomID']);
+        $post = $this->request->getPost(['customerID']);
 
         $data = [
-            'room_type_id' => $post['roomID']
+            'customer_id' => $post['customerID']
         ];
 
         $result = $model->deleteRoom($data);
