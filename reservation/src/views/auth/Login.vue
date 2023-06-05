@@ -42,9 +42,11 @@ export default {
             email: '',
             password: '',
             resultMessage: '',
-            inputType: 'password',
-            user: JSON.parse(localStorage.getItem('user_info'))
+            inputType: 'password'
         }
+    },
+    created() {
+        this.user = JSON.parse(localStorage.getItem('user_info'));
     },
     methods: {
         showPassHandler() {

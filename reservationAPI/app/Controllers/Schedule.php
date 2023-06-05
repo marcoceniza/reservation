@@ -29,14 +29,14 @@ class Schedule extends BaseController
             'start_date' => $post['startDate'],
             'end_date' => $post['endDate'],
             'customer_id' => $post['customerID'],
-            'room_type_id' => $post['roomID'],
+            'room_type_id' => $post['roomID']
         ];
     
         $result = $model->addSchedule($data);
     
         return $this->response->setJSON([
             'success' => true,
-            'result' => 'Added Successfully! Reloading...'
+            'result' => 'Created Successfully! Reloading...'
         ]);
     }
 }

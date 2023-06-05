@@ -76,7 +76,7 @@
             <div class="modal-content">
 
             <div class="modal-header">
-                <h4 class="modal-title">Room Details</h4>
+                <h5 class="modal-title"><i class="bi bi-list-check"></i> Room Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
@@ -212,10 +212,6 @@
                         <button v-else @click.prevent="updateRoom" type="submit" class="btn btn-primary btn-block">Update</button>
                     </div>
                 </form> 
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
             </div>
 
             </div>
@@ -423,9 +419,11 @@ export default {
         }
     },
     mounted() {
-        axiosRes.get('/fetchRoom').then(res => {
+        axiosRes.get('/fetchRooms').then(res => {
             this.loadingState2 = false;
             this.rooms = res.data.result;
+
+            console.log(this.rooms);
         });
 
         DataTable.use(DataTablesCore);

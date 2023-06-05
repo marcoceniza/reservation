@@ -24,7 +24,7 @@
                     <div class="spinner-grow text-muted spinner-grow-sm"></div>
                     <div class="spinner-grow text-muted spinner-grow-sm"></div>
                 </div>
-                <div v-else-if="rooms.length !== 0" class="table-responsive">
+                <div v-else-if="rooms != ''" class="table-responsive">
                     <DataTable class="table table-striped" id="myTable">
                         <thead class="table-dark">
                             <tr>
@@ -38,7 +38,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="room in rooms" :key="room">
+                            <tr v-for="room in rooms" :key="room" v-show="room.created_status == 0">
                                 <td>{{ room.room_type_id }}</td>
                                 <td>{{ room.name }}</td>
                                 <td>{{ formatCategory(room.category) }}</td>
@@ -201,6 +201,19 @@ export default {
         }
     },
     methods: {
+        setCreatedStatus() {
+            this.rooms.forEach(res => {
+                if(res.customer_id == this.getCustomerID) {
+                    const formData = new FormData();
+                    formData.append('customerID', this.getCustomerID);
+                    formData.append('status', 1);
+
+                    axiosRes.post('/setStatus', formData).then(() => {
+                        return true;
+                    });
+                }
+            });
+        },
         getIDs(ct_ID, rm_ID) {
             this.getCustomerID = ct_ID;
             this.getRoomID = rm_ID;
@@ -260,6 +273,8 @@ export default {
                     setTimeout(() => {
                         window.location.reload();
                     }, 2000);
+
+                    this.setCreatedStatus();
                 }
             });
         },

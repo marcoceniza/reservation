@@ -21,7 +21,7 @@ class Login extends BaseController
 
         if($query->getNumRows() === 0) return $this->response->setJSON(['result' => 'Email does not exist!']);
 
-        // if(!password_verify($post['password'], $user->password)) return $this->response->setJSON(['result' => 'Incorrect Password!']);
+        if(!password_verify($post['password'], $user->password)) return $this->response->setJSON(['result' => 'Incorrect Password!']);
 
         $token = bin2hex(random_bytes(16));
 

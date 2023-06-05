@@ -52,7 +52,25 @@ class Dashboard extends BaseController
 
         return $this->response->setJSON([
             'success' => true,
-            'result' => 'Added Successfully! Reloading...'
+            'result' => 'Reserve Successfully! Reloading...'
+        ]);
+    }
+
+    public function setCreatedStatusController() 
+    {
+        $model = new DashboardModel();
+
+        $post = $this->request->getPost();
+
+        $data = [
+            'created_status' => $post['status']
+        ];
+
+        $result = $model->setCreatedStatus($post['customerID'], $data);
+
+        return $this->response->setJSON([
+            'success' => true,
+            'result' => 'Update Created Status Successfully'
         ]);
     }
 

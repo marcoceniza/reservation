@@ -1,0 +1,30 @@
+CRITICAL - 2023-06-03 13:42:56 --> Undefined array key "passoword"
+in APPPATH\Controllers\Login.php on line 20.
+ 1 APPPATH\Controllers\Login.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "passoword"', 'C:\\Users\\marka\\OneDrive\\Desktop\\CI Prac\\Reservation\\reservationAPI\\app\\Controllers\\Login.php', 20)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login->loginController()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\OneDrive\\Desktop\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+CRITICAL - 2023-06-03 13:46:01 --> Undefined variable $user
+in APPPATH\Controllers\Login.php on line 25.
+ 1 APPPATH\Controllers\Login.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'C:\\Users\\marka\\OneDrive\\Desktop\\CI Prac\\Reservation\\reservationAPI\\app\\Controllers\\Login.php', 25)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login->loginController()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\OneDrive\\Desktop\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+CRITICAL - 2023-06-03 13:47:04 --> Call to undefined method stdClass::getNumRows()
+in APPPATH\Controllers\Login.php on line 20.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login->loginController()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\OneDrive\\Desktop\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+CRITICAL - 2023-06-03 13:47:24 --> Call to undefined method stdClass::getNumRows()
+in APPPATH\Controllers\Login.php on line 20.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Login->loginController()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\marka\\OneDrive\\Desktop\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
