@@ -303,8 +303,6 @@ export default {
         axiosRes.get('/fetchRoom').then(res => {
             this.loadingState2 = false;
             this.rooms = res.data.result;
-
-            console.log(this.rooms);
         });
 
         DataTable.use(DataTablesCore);

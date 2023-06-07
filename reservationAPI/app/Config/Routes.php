@@ -53,6 +53,10 @@ $routes->post('updateSchedule', 'Schedule::updateScheduleController');
 // set Status
 $routes->post('setStatus', 'Dashboard::setCreatedStatusController');
 
+// customers 
+$routes->get('fetchCustomers', 'Customers::fetchCustomersController');
+$routes->post('updateCustomers', 'Customers::updateCustomersController');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

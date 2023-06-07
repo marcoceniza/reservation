@@ -52,14 +52,7 @@ class Schedule extends BaseController
         $model = new ScheduleModel();
 
         $post = $this->request->getPost(['startDate', 'endDate', 'reserveID']);
-
-        if(empty($post['startDate']) || empty($post['endDate'])) {
-            return $this->response->setJSON([
-                'success' => false,
-                'result' => 'All Fields are Required!'
-            ]);
-        }
-    
+        
         $data = [
             'start_date' => $post['startDate'],
             'end_date' => $post['endDate']
@@ -69,7 +62,7 @@ class Schedule extends BaseController
     
         return $this->response->setJSON([
             'success' => true,
-            'result' => 'Updated Successfully! Reloading...'
+            'result' => 'Created Successfully! Reloading...'
         ]);
     }
 }
