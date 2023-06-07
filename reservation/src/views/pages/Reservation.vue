@@ -3,12 +3,7 @@
 
     <div class="row dash_con">
         <section class="col-2">
-            <ul>
-                <li><a href="javascript:;" @click="$router.push('/admin/dashboard')"><i class="bi bi-house-check-fill"></i> Dashboard</a></li>
-                <li><a href="javascript:;" @click="$router.push('/admin/reservation')"><i class="bi bi-calendar2-plus-fill"></i> Reservation</a></li>
-                <li><a href="javascript:;" @click="$router.push('/admin/rooms')"><i class="bi bi-building-fill-add"></i> Rooms</a></li>
-                <li><a href="javascript:;" @click="$router.push('/admin/customers')"><i class="bi bi-people-fill"></i> Customers</a></li>
-            </ul>
+            <Tabs />
         </section>
         <section class="col-10">
             <div class="container-fluid">
@@ -149,10 +144,11 @@ import axiosRes from '@/main';
 import DataTable from 'datatables.net-vue3';
 import DataTablesCore from 'datatables.net-bs5';
 import Nav from '@/components/Nav.vue';
+import Tabs from '@/components/Tabs.vue';
 
 export default {
     name: 'adminReservation',
-    components: { DataTable, DataTablesCore, Nav },
+    components: { DataTable, DataTablesCore, Nav, Tabs },
     data() {
         return {
             loadingState: false,

@@ -44,7 +44,7 @@ class Home extends BaseController
 
         return $this->response->setJSON([
             'success' => true,
-            'result' => 'Added Successfully! Reloading...'
+            'result' => 'Submitted Successfully!'
         ]);
     }
 }

@@ -150,7 +150,17 @@
 
             </div>
         </div>
-    </div>  
+    </div>
+
+    <!-- Modal for Success Reservation -->
+    <div v-if="successBooking" class="modal_wrap">
+        <div class="modal_content">
+            <i class="bi bi-check-circle"></i>
+            <h3>AWESOME!</h3>
+            <p>You're <strong>Booking Reservation</strong> was successfully submitted. <span>Plese wait for a call from us, for confirmation. Thank you.</span></p>
+            <button @click="successReservation" class="btn btn-success">Done</button>
+        </div>
+    </div>
 
 </template>
 
@@ -174,10 +184,14 @@ export default {
             email: '',
             phone: '',
             addCustomerMessage: '',
-            confirmReserve: ''
+            confirmReserve: '',
+            successBooking: false
         }
     },
     methods: {
+        successReservation() {
+            setTimeout(() => { window.location.reload() }, 2000);
+        },
         addCustomerInfo() {
             this.loadingState = true;
             const formData = new FormData();
@@ -210,7 +224,7 @@ export default {
                     this.phone = '';
                     this.confirmSelection = '';
 
-                    setTimeout(() => { window.location.reload() }, 2000);
+                    this.successBooking = true;
                 }
             });
         },
@@ -255,4 +269,9 @@ export default {
 .requiredInput{color: #f70e0e;}
 .choosenRoom_wrap img{width: 300px;}
 .alert{text-align: center;}
+.modal_wrap{position: fixed; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: 9999; background: rgba(0,0,0,0.7); top: 0; text-align: center;}
+.modal_wrap .modal_content{background: #fff; width: 400px; max-width: 100%; padding: 24px 12px 32px; border-radius: 6px;}
+.modal_wrap .modal_content i{color: #198754; font-size: 50px;}
+.modal_wrap .modal_content h3{color: #198754;margin-top: 8px;}
+.modal_wrap .modal_content p{color: #6c757d;margin-bottom: 20px;}
 </style>
