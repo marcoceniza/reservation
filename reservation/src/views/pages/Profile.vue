@@ -8,143 +8,75 @@
         <section class="col-10">
             <div class="container-fluid">
                 <div class="d-flex justify-content-between align-items-center mt-3 mb-3">
-                    <h5><i class="bi bi-building-fill-add"></i> Rooms</h5>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRoomModal"><i class="bi bi-plus-circle-fill"></i> Add</button>
+                    <h5><i class="bi bi-person-fill"></i> Profile</h5>
                 </div>
-
-                <div v-if="deleteMessage" :class="{'alert': true, 'alert-danger': !deleteMessage.isSuccess, 'alert-success': deleteMessage.isSuccess}">
-                    <strong>{{ deleteMessage.message }}</strong>
-                </div>
-
-                <div v-if="loadingState2" class="d-flex justify-content-center spinnerClass">
-                    <div class="spinner-grow text-muted spinner-grow-sm"></div>
-                    <div class="spinner-grow text-muted spinner-grow-sm"></div>
-                    <div class="spinner-grow text-muted spinner-grow-sm"></div>
-                </div>
-                <div v-else-if="rooms.length !== 0" class="table-responsive">
-                    <DataTable class="table table-striped" id="myTable">
-                        <thead class="table-dark">
-                            <tr>
-                                <th>ID</th>
-                                <th>Name</th>
-                                <th>Capacity</th>
-                                <th>Price</th>
-                                <th>Category</th>
-                                <th>Location</th>
-                                <th>Created_at</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="room in rooms" :key="room">
-                                <td>{{ room.room_type_id }}</td>
-                                <td>{{ room.name }}</td>
-                                <td>{{ room.capacity }}</td>
-                                <td>{{ room.price }}</td>
-                                <td>{{ formatCategory(room.category) }}</td>
-                                <td>{{ room.location }}</td>
-                                <td>{{ formatDate(room.created_at) }}</td>
-                                <td class="d-flex justify-content-center btn_action">
-                                    <a href="" class="btn btn-primary btn-sm" @click="viewSpecificRoom(room.room_type_id)" data-bs-toggle="modal" data-bs-target="#viewRoomModal"><i class="bi bi-eye-fill"></i> View</a>
-                                    <a href="" class="btn btn-warning btn-sm" @click="getSpecificRoom(room.room_type_id)" data-bs-toggle="modal" data-bs-target="#updateRoomModal"><i class="bi bi-pencil-square"></i> Edit</a>
-                                    <a href="" class="btn btn-danger btn-sm" @click="getConfirmDeleteID = room.room_type_id" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal"><i class="bi bi-trash-fill"></i> Delete</a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </DataTable>
-                </div>
-                <div v-else class="text-center mt-4">
-                    <p class="text-muted">No Data</p>
+                <div class="row bg-body-tertiary p-4">
+                    <div class="col-3 profile_box">
+                        <figure><img class="img-fluid img-thumbnail mx-auto d-block" src="https://placehold.co/400" alt=""></figure>
+                        <h3>Name <span>title</span></h3>
+                        <ul>
+                            <li>Email: test@gmail.com</li>
+                            <li>Phone: 1234567890</li>
+                            <li>Address: Text test</li>
+                        </ul>
+                    </div>
+                    <div class="col-9">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="true">Profile</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="updateProfile-tab" data-bs-toggle="tab" data-bs-target="#updateProfile-tab-pane" type="button" role="tab" aria-controls="updateProfile-tab-pane" aria-selected="false">Update Profile</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                                <form action="/action_page.php">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="mb-3 mt-3">
+                                                <label for="email" class="form-label">Firstname:</label>
+                                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="mb-3 mt-3">
+                                                <label for="email" class="form-label">Lastname:</label>
+                                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="mb-3 mt-3">
+                                                <label for="email" class="form-label">Email:</label>
+                                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="mb-3 mt-3">
+                                                <label for="email" class="form-label">Phone:</label>
+                                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="mb-3 mt-3">
+                                                <label for="email" class="form-label">Address:</label>
+                                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="updateProfile-tab-pane" role="tabpanel" aria-labelledby="updateProfile-tab" tabindex="0">
+                                This is some placeholder content the Profile tab's associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other .nav-powered navigation.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-    </div>
-
-    <!-- Modal for Viewing Room -->
-    <div class="modal fade" id="viewRoomModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-            <div class="modal-header">
-                <h5 class="modal-title"><i class="bi bi-list-check"></i> Room Details</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <div class="modal-body">
-                <figure><img class="img-fluid rounded mx-auto d-block" :src="photoBaseURL + viewRoom.photo" alt=""></figure>
-                <ul class="list-group">
-                    <li class="list-group-item">ID: {{ viewRoom.room_type_id }}</li>
-                    <li class="list-group-item">Name: {{ viewRoom.name }}</li>
-                    <li class="list-group-item">Capacity: {{ viewRoom.capacity }} pax</li>
-                    <li class="list-group-item">Price: ${{ viewRoom.price }}</li>
-                    <li class="list-group-item">Category: {{ formatCategory(viewRoom.category) }}</li>
-                    <li class="list-group-item">Location: {{ viewRoom.price }}</li>
-                    <li class="list-group-item">Created At: {{ formatDate(viewRoom.created_at) }}</li>
-                </ul>
-            </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal for Adding Room -->
-    <div class="modal fade" id="addRoomModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title"><i class="bi bi-plus-circle-fill"></i> Add New Room</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-
-                <div class="modal-body">
-                    <div v-if="resultMessage" :class="{'alert': true, 'alert-danger': !resultMessage.isSuccess, 'alert-success': resultMessage.isSuccess}">
-                        <strong>{{ resultMessage.message }}</strong>
-                    </div>
-                    <form>
-                        <div class="mb-3 mt-3">
-                            <label for="name" class="form-label">Name: <span class="requiredInput">*</span></label>
-                            <input type="text" class="form-control" placeholder="Name" v-model="name">
-                        </div>
-                        <div class="mb-3 mt-3">
-                            <div class="d-flex justify-content-between">
-                                <section>
-                                    <label for="capacity" class="form-label">Capacity: <span class="requiredInput">*</span></label>
-                                    <input type="text" class="form-control" placeholder="Capacity" v-model="capacity">
-                                </section>
-                                <section>
-                                    <label for="price" class="form-label">Price: <span class="requiredInput">*</span></label>
-                                    <input type="text" class="form-control" placeholder="Price" v-model="price">
-                                </section>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="category" class="form-label">Category: <span class="requiredInput">*</span></label>
-                            <select class="form-control" v-model="category">
-                                <option value="">Please select</option>
-                                <option v-for="option in categoryOptions" :key="option" :value="option.value">{{ option.label }}</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="location" class="form-label">Location: <span class="requiredInput">*</span></label>
-                            <input type="text" class="form-control" placeholder="Location" v-model="location">
-                        </div>
-                        <div class="mb-3">
-                            <label for="price" class="form-label">Photo: <span class="requiredInput">*</span></label>
-                            <input type="file" class="form-control" @change="handleUpload">
-                        </div>
-                        <div class="d-grid">
-                            <button v-if="loadingState" class="btn btn-primary btn-block" disabled>
-                                <span class="spinner-grow spinner-grow-sm"></span>
-                                Adding...
-                            </button>
-                            <button v-else @click.prevent="addRoom" type="submit" class="btn btn-primary btn-block">Add</button>
-                        </div>
-                    </form> 
-                </div>
-
-            </div>
-        </div>
     </div>
 
     <!-- Modal for Updating Room -->
@@ -208,35 +140,6 @@
         </div>
     </div>
 
-    <!-- Modal for Confirm Delete -->
-    <div class="modal fade" id="confirmDeleteModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title"><i class="bi bi-trash-fill"></i> Delete Message</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-
-                <div class="modal-body">
-                    <div v-if="deleteConfirmMessage" :class="{'alert': true, 'alert-danger': !deleteConfirmMessage.isSuccess, 'alert-success': deleteConfirmMessage.isSuccess}">
-                        <strong>{{ deleteConfirmMessage.message }}</strong>
-                    </div>
-                    <p>Are you sure you want to delete?</p>
-                </div>
-
-                <div class="modal-footer">
-                    <button v-if="loadingState" class="btn btn-primary" disabled>
-                        <span class="spinner-grow spinner-grow-sm"></span>
-                        Deleting...
-                    </button>
-                    <button v-else @click.prevent="deleteRoom" type="submit" class="btn btn-primary btn-block">Delete</button>
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
 </template>
 
 <script>
@@ -439,4 +342,8 @@ thead tr th{text-align: center;}
 .dash_con section ul li a:first-child{border-bottom: none;}
 .dash_con section ul li a:hover{opacity: 0.8;}
 .dash_con section ul li a i{padding-right: 5px;}
+.profile_box h3{text-align: center;}
+.profile_box h3 span{display: block; color: #a2a2a2; font-size: 18px;}
+.profile_box ul{margin: 25px 0 0;}
+.profile_box ul li{margin-bottom: 6px; color: #555;}
 </style>

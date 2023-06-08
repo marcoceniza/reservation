@@ -45,7 +45,7 @@
                                 <td>{{ formatStatus(schedule.start_date, schedule.end_date) }}</td>
                                 <td class="d-flex justify-content-center btn_action">
                                     <a href="" class="btn btn-primary btn-sm" @click="viewSpecificSchedule(schedule.room_type_id, schedule.customer_id)" data-bs-toggle="modal" data-bs-target="#viewReserveRoomModal"><i class="bi bi-eye-fill"></i> View</a>
-                                    <a href="" class="btn btn-warning btn-sm" @click="getUpdateID = schedule.reservation_id" data-bs-toggle="modal" data-bs-target="#createDateScheduleModal"><i class="bi bi-pencil-square"></i> Edit</a>
+                                    <a href="" :class="{ btn: true, 'btn-warning': true, 'btn-sm': true, disabled: checkEditHandler(schedule.start_date) }" @click="getUpdateID = schedule.reservation_id" data-bs-toggle="modal" data-bs-target="#createDateScheduleModal"><i class="bi bi-pencil-square"></i> Edit</a>
                                 </td>
                             </tr>
                         </tbody>
@@ -165,17 +165,23 @@ export default {
             schedules: '',
             getUpdateID: '',
             getConfirmDeleteID: '',
-            photoBaseURL: 'http://localhost:8080/uploads/'
+            photoBaseURL: 'http://localhost:8080/uploads/',
+            currentDate: new Date()
         }
     },
     methods: {
+        checkEditHandler(sDate) {
+            let startDate = new Date(sDate);
+
+            if(this.currentDate >= startDate) return true;
+            else return false;
+        },
         formatStatus(sDate, eDate) {
-            let currentDate = new Date();
             let startDate = new Date(sDate);
             let endDate = new Date(eDate);
 
-            if(currentDate < startDate) return 'Comming';
-            else if(currentDate >= startDate && currentDate <= endDate) return 'Ongoing';
+            if(this.currentDate < startDate) return 'Comming';
+            else if(this.currentDate >= startDate && this.currentDate <= endDate) return 'Ongoing';
             else return 'Done';
         },
         formatCategory(num) {

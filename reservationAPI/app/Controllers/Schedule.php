@@ -62,7 +62,7 @@ class Schedule extends BaseController
     
         return $this->response->setJSON([
             'success' => true,
-            'result' => 'Created Successfully! Reloading...'
+            'result' => 'Updated Successfully! Reloading...'
         ]);
     }
 }

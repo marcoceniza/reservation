@@ -29,7 +29,7 @@ class Login extends BaseController
             'success' => true,
             'user' => $user,
             'token' => $token,
-            'result' => 'Successfully Login. Redirecting...'
+            'result' => 'Successfully Login!'
         ]);
     }
 }

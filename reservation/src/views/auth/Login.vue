@@ -68,7 +68,7 @@ export default {
                 if(res.data.success) {
                     localStorage.setItem('user_info', JSON.stringify(res.data.user));
                     localStorage.setItem('user_token', JSON.stringify(res.data.token));
-                    setTimeout(() => { this.$router.push('/admin/dashboard'); }, 3000);
+                    this.$router.push('/admin/dashboard');
                 }
             });
         },

@@ -1,11 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <div class="container-fluid d-flex justify-content-end">
-            <div class="adminProfile">
-                <a class="user_icon" href=""><i class="bi bi-person-circle"></i></a>
-            </div>
-        </div>
-    </nav>
+    <Nav />
 
     <div class="row dash_con">
         <section class="col-2">
