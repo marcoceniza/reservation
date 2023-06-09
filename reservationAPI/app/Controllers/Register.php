@@ -11,18 +11,35 @@ class Register extends BaseController
     {
         $model = new RegisterModel();
 
-        $post = $this->request->getPost(['email', 'password']);
+        $post = $this->request->getPost(['email', 'password', 'firstname', 'lastname', 'age', 'phone', 'address']);
 
-        if(empty($post['email']) || empty($post['password'])) return $this->response->setJSON(['success' => false, 'result' => 'All Fields are Required!']);
+        // if(empty($post['email']) || empty($post['password'])) return $this->response->setJSON(['success' => false, 'result' => 'All Fields are Required!']);
 
-        $data = [
-            'email' => $post['email'],
-            'password' => password_hash($post['password'], PASSWORD_DEFAULT),
-            'user_type' => 0
+        $profileData = [
+            'first_name' => $post['firstname'],
+            'last_name' => $post['lastname'],
+            'age' => $post['age'],
+            'phone' => $post['phone'],
+            'address' => $post['address']
         ];
 
-        $result = $model->registerUser($data);
+        $profileID = $model->createProfile($profileData);
 
-        return $this->response->setJSON(['success' => true, 'result' => 'Register Successfully!']);
+        if($profileID) {
+            $userData = [
+                'email' => $post['email'],
+                'password' => password_hash($post['password'], PASSWORD_DEFAULT),
+                'user_type' => 0,
+                'profile_id' => $profileID
+            ];
+    
+            $result = $model->registerUser($userData);
+    
+            if ($result) {
+                return $this->response->setJSON(['success' => true, 'result' => 'Registered Successfully!']);
+            }
+        }
+
+        return $this->response->setJSON(['success' => false, 'result' => 'Registration Failed!']);
     }
 }
