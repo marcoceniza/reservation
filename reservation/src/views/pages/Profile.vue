@@ -14,7 +14,7 @@
                     <div class="col-2 profile_box">
                         <div class="profile_con">
                             <figure><img class="img-fluid img-thumbnail mx-auto d-block" src="https://placehold.co/400" alt=""></figure>
-                            <h3>Name <span>title</span></h3>
+                            <h5>{{ adminDatas.first_name }} {{ adminDatas.last_name }} <span>{{ adminDatas.email }}</span></h5>
                         </div>
                     </div>
                     <div class="col-9 profile_box">
@@ -30,42 +30,62 @@
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
                                     <ul class="list-group">
-                                        <li class="list-group-item">Firstname: test</li>
-                                        <li class="list-group-item">Lastname: test</li>
-                                        <li class="list-group-item">Email: test</li>
-                                        <li class="list-group-item">Phone: test</li>
-                                        <li class="list-group-item">Address: test</li>
+                                        <li class="list-group-item">Firstname: {{ adminDatas.first_name }}</li>
+                                        <li class="list-group-item">Lastname: {{ adminDatas.last_name }}</li>
+                                        <li class="list-group-item">Age: {{ adminDatas.age }}</li>
+                                        <li class="list-group-item">Phone: {{ adminDatas.phone }}</li>
+                                        <li class="list-group-item">Address: {{ adminDatas.address }}</li>
+                                        <li class="list-group-item">Email: {{ adminDatas.email }}</li>
+                                        <li class="list-group-item">Password: {{ adminDatas.password }}</li>
                                     </ul> 
                                 </div>
                                 <div class="tab-pane fade" id="updateProfile-tab-pane" role="tabpanel" aria-labelledby="updateProfile-tab" tabindex="0">
                                     <form action="/action_page.php">
                                         <div class="d-flex">
                                             <div class="mb-3 mt-3 mx-2 flex-fill">
-                                                <label for="email" class="form-label">Firstname:</label>
-                                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                                <label for="editFirstname" class="form-label">Firstname:</label>
+                                                <input type="text" class="form-control" placeholder="Enter firstname" v-model="editFirstname">
                                             </div>
                                             <div class="mb-3 mt-3 mx-2 flex-fill">
-                                                <label for="email" class="form-label">Lastname:</label>
-                                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                                <label for="editLastname" class="form-label">Lastname:</label>
+                                                <input type="text" class="form-control" placeholder="Enter lastname" v-model="editLastname">
                                             </div>
                                         </div>
                                         <div class="d-flex">
                                             <div class="mb-3 mt-3 mx-2 flex-fill">
-                                                <label for="email" class="form-label">Email:</label>
-                                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                                <label for="editAge" class="form-label">Age:</label>
+                                                <input type="text" class="form-control" placeholder="Enter age" v-model="editAge">
                                             </div>
                                             <div class="mb-3 mt-3 mx-2 flex-fill">
-                                                <label for="email" class="form-label">Phone:</label>
-                                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                                <label for="editPhone" class="form-label">Phone:</label>
+                                                <input type="text" class="form-control" placeholder="Enter phone" v-model="editPhone">
                                             </div>
                                         </div>
                                         <div class="d-flex">
                                             <div class="mb-3 mt-3 mx-2 flex-fill">
                                                 <label for="email" class="form-label">Address:</label>
-                                                <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                                                <input type="text" class="form-control" id="email" placeholder="Enter address" v-model="editAddress">
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary mx-2">Update</button>
+                                        <div class="d-flex">
+                                            <div class="mb-3 mt-3 mx-2 flex-fill">
+                                                <label for="editEmail" class="form-label">Email:</label>
+                                                <input type="text" class="form-control" placeholder="Enter email" v-model="editEmail">
+                                            </div>
+                                            <div class="mb-3 mt-3 mx-2 flex-fill">
+                                                <label for="editPassword" class="form-label">Password:</label>
+                                                <input :type="inputType" class="form-control" placeholder="Enter password" v-model="editPassword">
+                                                <p class="showPassIcon" v-if="editPassword.length != 0">
+                                                    <i @click="showPassHandler" v-if="inputType == 'password'" class="bi bi-eye-fill"></i>
+                                                    <i @click="showPassHandler" v-else class="bi bi-eye-slash-fill"></i>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <button v-if="loadingState" class="btn btn-primary btn-block" disabled>
+                                            <span class="spinner-grow spinner-grow-sm"></span>
+                                            Updating...
+                                        </button>
+                                        <button v-else @click.prevent="updateInfo" type="submit" class="btn btn-primary mx-2">Update</button>
                                     </form>
                                 </div>
                             </div>
@@ -76,144 +96,55 @@
         </section>
     </div>
 
-    <!-- Modal for Updating Room -->
-    <div class="modal fade" id="updateRoomModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title"><i class="bi bi-pencil-square"></i> Update Room</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-
-                <div class="modal-body">
-                    <div v-if="updateMessage" :class="{'alert': true, 'alert-danger': !updateMessage.isSuccess, 'alert-success': updateMessage.isSuccess}">
-                        <strong>{{ updateMessage.message }}</strong>
-                    </div>
-                    <form>
-                        <div class="mb-3 mt-3">
-                            <label for="name" class="form-label">Name: <span class="requiredInput">*</span></label>
-                            <input type="text" class="form-control" placeholder="Enter name" v-model="editName">
-                        </div>
-                        <div class="mb-3 mt-3">
-                            <div class="d-flex justify-content-between">
-                                <section>
-                                    <label for="capacity" class="form-label">Capacity: <span class="requiredInput">*</span></label>
-                                    <input type="text" class="form-control" placeholder="Enter capacity" v-model="editCapacity">
-                                </section>
-                                <section>
-                                    <label for="price" class="form-label">Price: <span class="requiredInput">*</span></label>
-                                    <input type="text" class="form-control" placeholder="Enter price" v-model="editPrice">
-                                </section>
-                            </div>
-                        </div>
-                        <div class="mb-3 mt-3">
-                            <label for="name" class="form-label">Category: <span class="requiredInput">*</span></label>
-                            <select class="form-control" v-model="editCategory">
-                                <option value="1" :selected="editCategory === '1'">With Aircon</option>
-                                <option value="0" :selected="editCategory === '0'">Without Aircon</option>
-                            </select>
-                        </div>
-                        <div class="mb-3 mt-3">
-                            <label for="location" class="form-label">Location: <span class="requiredInput">*</span></label>
-                            <input type="text" class="form-control" placeholder="Location" v-model="editLocation">
-                        </div>
-                        <div class="mb-3">
-                            <label for="price" class="form-label">Photo:</label>
-                            <input type="file" class="form-control" @change="handleEditUpload">
-                            <small class="updatePhotoNote">Note: If you dont want to update photo, just leave it blank</small>
-                        </div>
-                        <div class="d-grid">
-                            <button v-if="loadingState" class="btn btn-primary btn-block" disabled>
-                                <span class="spinner-grow spinner-grow-sm"></span>
-                                Updating...
-                            </button>
-                            <button v-else @click.prevent="updateRoom" type="submit" class="btn btn-primary btn-block">Update</button>
-                        </div>
-                    </form> 
-                </div>
-
-            </div>
-        </div>
-    </div>
-
 </template>
 
 <script>
 import axiosRes from '@/main';
-import DataTable from 'datatables.net-vue3';
-import DataTablesCore from 'datatables.net-bs5';
 import Nav from '@/components/Nav.vue';
 import Tabs from '@/components/Tabs.vue';
 
 export default {
     name: 'adminRooms',
-    components: { DataTable, DataTablesCore, Nav, Tabs },
+    components: { Nav, Tabs },
     data() {
         return {
             loadingState: false,
             loadingState2: true,
-            name: '',
-            capacity: '',
-            price: '',
-            category: '',
-            categoryOptions: [
-                { value: 1, label: 'With Aircon' },
-                { value: 0, label: 'Without Aircon' }
-            ],
-            location: '',
-            editName: '',
-            editCapacity: '',
-            editPrice: '',
-            editCategory: '',
-            editLocation: '',
-            editRoomPhoto: '',
             resultMessage: '',
             updateMessage: '',
-            deleteMessage: '',
-            deleteConfirmMessage: '',
-            rooms: '',
-            viewRoom: '',
-            getRoomID: '',
-            roomPhoto: '',
-            getConfirmDeleteID: '',
-            photoBaseURL: 'http://localhost:8080/uploads/'
+            adminDatas: '',
+            photoBaseURL: 'http://localhost:8080/uploads/',
+            user: '',
+            editEmail: '',
+            editPassword: '',
+            editFirstname: '',
+            editLastname: '',
+            editAge: '',
+            editPhone: '',
+            editAddress: '',
+            inputType: 'password'
         }
     },
+    created() {
+        this.user = JSON.parse(localStorage.getItem('user_info'));
+    },
     methods: {
-        formatCategory(num) {
-            let convertToNumber = parseInt(num);
-            if(convertToNumber == 1) return num = 'With Aircon';
-            else return num = 'Without Aircon';
+        showPassHandler() {
+            this.inputType == 'password' ? this.inputType = 'text' : this.inputType = 'password';
         },
-        getSpecificRoom(ID) {
-            this.rooms.forEach(res => {
-                if(res.room_type_id === ID) {
-                    this.getRoomID = res.room_type_id;
-                    this.editName = res.name;
-                    this.editCapacity = res.capacity;
-                    this.editPrice = res.price;
-                    this.editCategory = res.category;
-                    this.editLocation = res.location;
-                }
-            });
-        },
-        handleEditUpload(event) {
-            this.editRoomPhoto = event.target.files[0];
-        },
-        updateRoom() {
+        updateInfo() {
             this.loadingState = true;
             const formData = new FormData();
-            formData.append('roomID', this.getRoomID);
-            formData.append('name', this.editName);
-            formData.append('capacity', this.editCapacity);
-            formData.append('price', this.editPrice);
-            formData.append('category', this.editCategory);
-            formData.append('location', this.editLocation);
-            this.editRoomPhoto !== '' ? formData.append('photo', this.editRoomPhoto) : '';
+            formData.append('userID', this.user.user_id);
+            formData.append('firstname', this.editFirstname);
+            formData.append('lastname', this.editLastname);
+            formData.append('age', this.editAge);
+            formData.append('phone', this.editPhone);
+            formData.append('address', this.editAddress);
+            formData.append('email', this.editEmail);
+            formData.append('password', this.editPassword);
 
-            axiosRes.post('/updateRoom', formData).then(res => {
-                console.log(this.editCategory);
+            axiosRes.post('/updateAdmin', formData).then(res => {
                 this.loadingState = false;
                 this.updateMessage = {
                     message: res.data.result,
@@ -221,102 +152,38 @@ export default {
                 };
 
                 if(res.data.success) {
-                    this.editName = '';
-                    this.editCapacity = '';
-                    this.editPrice = '';
-                    this.editCategory = '';
-                    this.editLocation = '';
-                    this.editRoomPhoto = '';
+                    // this.editFirstname = '';
+                    // this.editLastname = '';
+                    // this.editAge = '';
+                    // this.editPhone = '';
+                    // this.editAddress = '';
+                    // this.editEmail = '';
+                    // this.editPassword = '';
 
                     setTimeout(() => {
                         window.location.reload();
                     }, 2000);
                 }
             });
-        },
-        deleteRoom() {
-            this.loadingState = true;
-            const formData = new FormData();
-            formData.append('roomID', this.getConfirmDeleteID);
-
-            axiosRes.post('/deleteRoom', formData).then(res => {
-                this.loadingState = false;
-                if(res.data.success) {
-                    this.deleteConfirmMessage = {
-                        message: res.data.result,
-                        isSuccess: true
-                    };
-
-                    setTimeout(() => {
-                        window.location.reload();
-                    }, 2000);
-                }else {
-                    return;
-                }
-            });
-        },
-        viewSpecificRoom(ID) {
-            this.rooms.forEach(res => {
-                if(res.room_type_id === ID) {
-                    this.viewRoom = res;
-                }
-            });
-        },
-        handleUpload(event) {
-            this.roomPhoto = event.target.files[0];
-        },
-        addRoom() {
-            this.loadingState = true;
-            const formData = new FormData();
-            formData.append('name', this.name);
-            formData.append('capacity', this.capacity);
-            formData.append('price', this.price);
-            formData.append('category', this.category);
-            formData.append('location', this.location);
-            formData.append('photo', this.roomPhoto);
-
-            axiosRes.post('/addRoom', formData).then(res => {
-                this.loadingState = false;
-                this.resultMessage = {
-                    message: res.data.result,
-                    isSuccess: res.data.success ? true : false
-                };
-
-                if(res.data.success) {
-                    this.name = '';
-                    this.capacity = '';
-                    this.price = '';
-                    this.category = '';
-                    this.location = '';
-                    this.roomPhoto = '';
-
-                    setTimeout(() => {
-                        window.location.reload();
-                    }, 2000);
-                }
-            });
-        },
-        formatDate(dateString) {
-            const date = new Date(dateString);
-            const formattedDate = date.toLocaleString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-                hour: 'numeric',
-                minute: 'numeric',
-                second: 'numeric',
-                hour12: true
-            });
-            return formattedDate;
         }
     },
     mounted() {
-        axiosRes.get('/fetchRooms').then(res => {
+        axiosRes.get('/fetchAdmin').then(res => {
             this.loadingState2 = false;
-            this.rooms = res.data.result;
+            
+            res.data.result.forEach(res => {
+                if(res.user_id == this.user.user_id) {
+                    this.adminDatas = res;
+                    this.editEmail = res.email;
+                    this.editPassword = res.password;
+                    this.editFirstname = res.first_name;
+                    this.editLastname = res.last_name;
+                    this.editAge = res.age;
+                    this.editPhone = res.phone;
+                    this.editAddress = res.address;
+                }
+            });
         });
-
-        DataTable.use(DataTablesCore);
     }
 }
 </script>
@@ -339,9 +206,11 @@ thead tr th{text-align: center;}
 .dash_con section ul li a:first-child{border-bottom: none;}
 .dash_con section ul li a:hover{opacity: 0.8;}
 .dash_con section ul li a i{padding-right: 5px;}
-.profile_box h3{text-align: center;}
-.profile_box h3 span{display: block; color: #a2a2a2; font-size: 18px;}
+.profile_box h5{text-align: center;}
+.profile_box h5 span{display: block; color: #a2a2a2; font-size: 18px;}
 .profile_box ul{margin: 25px 0 0;}
 .profile_box ul li{margin-bottom: 6px; color: #555;}
 .profile_inner .profile_con{box-shadow: 0px 0px 5px #c8c8c8; border-radius: 4px; padding: 12px 8px 40px; min-height: 350px;}
+.showPassIcon{position: relative;}
+.showPassIcon i{position: absolute; right: 8px; bottom: 7px; z-index: 12; background: #fff; padding-left: 4px;cursor: pointer;}
 </style>

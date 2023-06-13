@@ -1,0 +1,152 @@
+CRITICAL - 2023-06-13 19:09:38 --> Too few arguments to function App\Controllers\Register::__construct(), 0 passed in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php on line 906 and exactly 1 expected
+in APPPATH\Controllers\Register.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(906): App\Controllers\Register->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+CRITICAL - 2023-06-13 19:16:03 --> Too few arguments to function App\Controllers\Register::__construct(), 0 passed in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php on line 906 and exactly 1 expected
+in APPPATH\Controllers\Register.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(906): App\Controllers\Register->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+CRITICAL - 2023-06-13 19:16:58 --> Too few arguments to function App\Controllers\Register::__construct(), 0 passed in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php on line 906 and exactly 1 expected
+in APPPATH\Controllers\Register.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(906): App\Controllers\Register->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+CRITICAL - 2023-06-13 19:17:58 --> Too few arguments to function App\Controllers\Register::__construct(), 0 passed in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php on line 906 and exactly 1 expected
+in APPPATH\Controllers\Register.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(906): App\Controllers\Register->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+CRITICAL - 2023-06-13 19:18:31 --> Too few arguments to function App\Controllers\Register::__construct(), 0 passed in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php on line 906 and exactly 1 expected
+in APPPATH\Controllers\Register.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(906): App\Controllers\Register->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+CRITICAL - 2023-06-13 19:22:55 --> Too few arguments to function App\Controllers\Register::__construct(), 0 passed in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php on line 906 and exactly 1 expected
+in APPPATH\Controllers\Register.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(906): App\Controllers\Register->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+CRITICAL - 2023-06-13 19:26:38 --> Class 'App\Controllers\RegisterModels' not found
+in APPPATH\Controllers\Register.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(906): App\Controllers\Register->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(490): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+CRITICAL - 2023-06-13 22:19:35 --> You must use the "set" method to update an entry.
+in SYSTEMPATH\Database\BaseBuilder.php on line 2521.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2455): CodeIgniter\Database\BaseBuilder->validateUpdate()
+ 2 APPPATH\Models\RegisterModel.php(42): CodeIgniter\Database\BaseBuilder->update(null)
+ 3 APPPATH\Controllers\Register.php(75): App\Models\RegisterModel->updateAdmin('6', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Register->updateAdminController()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-13 22:20:47 --> mysqli_sql_exception: Unknown column 'first_name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `user` S...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\RegisterModel.php(42): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Register.php(75): App\Models\RegisterModel->updateAdmin('6', Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Register->updateAdminController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-13 22:20:47 --> Unknown column 'first_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `user` SET `first_name` = \'my first name 2\', `last_name` = \'my last name 2\', `age` = \'30\', `phone` = \'1234567890\', `address` = \'full street address\', `email` = \'admin@gmail.com\', `password` = \'$2y$10$pKasxXJRHEOH7H7TeeywGuQD6OODJLzS1JQXCDlqlgKn72v0f0d0G\'
+WHERE `user_id` = \'6\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` SET `first_name` = \'my first name 2\', `last_name` = \'my last name 2\', `age` = \'30\', `phone` = \'1234567890\', `address` = \'full street address\', `email` = \'admin@gmail.com\', `password` = \'$2y$10$pKasxXJRHEOH7H7TeeywGuQD6OODJLzS1JQXCDlqlgKn72v0f0d0G\'
+WHERE `user_id` = \'6\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` SET `first_name` = \'my first name 2\', `last_name` = \'my last name 2\', `age` = \'30\', `phone` = \'1234567890\', `address` = \'full street address\', `email` = \'admin@gmail.com\', `password` = \'$2y$10$pKasxXJRHEOH7H7TeeywGuQD6OODJLzS1JQXCDlqlgKn72v0f0d0G\'
+WHERE `user_id` = \'6\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `user` SET `first_name` = :first_name:, `last_name` = :last_name:, `age` = :age:, `phone` = :phone:, `address` = :address:, `email` = :email:, `password` = :password:
+WHERE `user_id` = :user_id:', [...], false)
+ 5 APPPATH\Models\RegisterModel.php(42): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Register.php(75): App\Models\RegisterModel->updateAdmin('6', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Register->updateAdminController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-13 22:31:30 --> mysqli_sql_exception: Unknown column 'first_name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `user` S...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\RegisterModel.php(42): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Register.php(75): App\Models\RegisterModel->updateAdmin('6', Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Register->updateAdminController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-13 22:31:30 --> Unknown column 'first_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `user` SET `first_name` = \'my first name 2\', `last_name` = \'my last name 2\', `age` = \'30\', `phone` = \'1234567890\', `address` = \'full street address\', `email` = \'admin@gmail.com\', `password` = \'$2y$10$M.IPOjEtGi7re95pTy3PQeINI3.5LRUT.2V8.eEcj7YNbCMfUsOXe\'
+WHERE `user_id` = \'6\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` SET `first_name` = \'my first name 2\', `last_name` = \'my last name 2\', `age` = \'30\', `phone` = \'1234567890\', `address` = \'full street address\', `email` = \'admin@gmail.com\', `password` = \'$2y$10$M.IPOjEtGi7re95pTy3PQeINI3.5LRUT.2V8.eEcj7YNbCMfUsOXe\'
+WHERE `user_id` = \'6\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` SET `first_name` = \'my first name 2\', `last_name` = \'my last name 2\', `age` = \'30\', `phone` = \'1234567890\', `address` = \'full street address\', `email` = \'admin@gmail.com\', `password` = \'$2y$10$M.IPOjEtGi7re95pTy3PQeINI3.5LRUT.2V8.eEcj7YNbCMfUsOXe\'
+WHERE `user_id` = \'6\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `user` SET `first_name` = :first_name:, `last_name` = :last_name:, `age` = :age:, `phone` = :phone:, `address` = :address:, `email` = :email:, `password` = :password:
+WHERE `user_id` = :user_id:', [...], false)
+ 5 APPPATH\Models\RegisterModel.php(42): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Register.php(75): App\Models\RegisterModel->updateAdmin('6', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Register->updateAdminController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-13 22:48:38 --> mysqli_sql_exception: Unknown column 'first_name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `user` S...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` S...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` S...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `user` S...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\RegisterModel.php(42): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Register.php(75): App\Models\RegisterModel->updateAdmin('6', Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Register->updateAdminController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-13 22:48:38 --> Unknown column 'first_name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `user` SET `first_name` = \'my first name 2\', `last_name` = \'my last name 2\', `age` = \'30\', `phone` = \'1234567890\', `address` = \'full street address\', `email` = \'admin@gmail.com\', `password` = \'$2y$10$uDQOg.LxAqSZerhNh7Qb5OdvRrV4Co5g85RGVGW7t.jKQMVQy1sqy\'
+WHERE `user_id` = \'6\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `user` SET `first_name` = \'my first name 2\', `last_name` = \'my last name 2\', `age` = \'30\', `phone` = \'1234567890\', `address` = \'full street address\', `email` = \'admin@gmail.com\', `password` = \'$2y$10$uDQOg.LxAqSZerhNh7Qb5OdvRrV4Co5g85RGVGW7t.jKQMVQy1sqy\'
+WHERE `user_id` = \'6\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `user` SET `first_name` = \'my first name 2\', `last_name` = \'my last name 2\', `age` = \'30\', `phone` = \'1234567890\', `address` = \'full street address\', `email` = \'admin@gmail.com\', `password` = \'$2y$10$uDQOg.LxAqSZerhNh7Qb5OdvRrV4Co5g85RGVGW7t.jKQMVQy1sqy\'
+WHERE `user_id` = \'6\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `user` SET `first_name` = :first_name:, `last_name` = :last_name:, `age` = :age:, `phone` = :phone:, `address` = :address:, `email` = :email:, `password` = :password:
+WHERE `user_id` = :user_id:', [...], false)
+ 5 APPPATH\Models\RegisterModel.php(42): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Register.php(75): App\Models\RegisterModel->updateAdmin('6', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Register->updateAdminController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Register))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')

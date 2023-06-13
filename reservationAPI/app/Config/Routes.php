@@ -57,6 +57,10 @@ $routes->post('setStatus', 'Dashboard::setCreatedStatusController');
 $routes->get('fetchCustomers', 'Customers::fetchCustomersController');
 $routes->post('updateCustomers', 'Customers::updateCustomersController');
 
+// admin
+$routes->get('fetchAdmin', 'Register::fetchAdminController');
+$routes->post('updateAdmin', 'Register::updateAdminController');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

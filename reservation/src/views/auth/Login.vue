@@ -42,7 +42,8 @@ export default {
             email: '',
             password: '',
             resultMessage: '',
-            inputType: 'password'
+            inputType: 'password',
+            user: ''
         }
     },
     created() {
