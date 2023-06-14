@@ -7,11 +7,16 @@ use App\Models\ScheduleModel;
 
 class Schedule extends BaseController
 {
+    protected $model;
+
+    public function __construct()
+    {
+        $this->model = model(ScheduleModel::class);
+    }
+
     public function fetchScheduleController()
     {
-        $model = model(ScheduleModel::class);
-
-        $result = $model->fetchSchedule();
+        $result = $this->model->fetchSchedule();
 
         return $this->response->setJSON([
             'success' => true,
@@ -21,8 +26,6 @@ class Schedule extends BaseController
 
     public function addScheduleController()
     {
-        $model = new ScheduleModel();
-
         $post = $this->request->getPost(['startDate', 'endDate', 'customerID', 'roomID']);
 
         if(empty($post['startDate']) || empty($post['endDate'])) {
@@ -39,18 +42,16 @@ class Schedule extends BaseController
             'room_type_id' => $post['roomID']
         ];
     
-        $result = $model->addSchedule($data);
+        $result = $this->model->addSchedule($data);
     
         return $this->response->setJSON([
             'success' => true,
-            'result' => 'Created Successfully! Reloading...'
+            'result' => 'Created Successfully!'
         ]);
     }
 
     public function updateScheduleController()
     {
-        $model = new ScheduleModel();
-
         $post = $this->request->getPost(['startDate', 'endDate', 'reserveID']);
         
         $data = [
@@ -58,11 +59,11 @@ class Schedule extends BaseController
             'end_date' => $post['endDate']
         ];
     
-        $result = $model->updateSchedule($post['reserveID'], $data);
+        $result = $this->model->updateSchedule($post['reserveID'], $data);
     
         return $this->response->setJSON([
             'success' => true,
-            'result' => 'Updated Successfully! Reloading...'
+            'result' => 'Updated Successfully!'
         ]);
     }
 }

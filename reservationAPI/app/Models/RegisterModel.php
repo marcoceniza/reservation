@@ -37,10 +37,16 @@ class RegisterModel extends Model
         return $query;
     }
 
-    public function updateAdmin($id, $data)
+    public function updateAdmin($userID, $userData, $profileData)
     {
-        // $this->userTB->where('user_id', $id)->update($data);
-        $query = $this->profileTB->where('user_id', $id)->update($data);
-        return $query;
+        $this->userTB->where('user_id', $userID)->update($userData);
+
+        $profileID = $this->userTB->where('user_id', $userID)->get()->getRow()->profile_id;
+        $this->profileTB->where('profile_id', $profileID)->update($profileData);
+    
+        return $this->userTB->join('profile', 'user.profile_id = profile.profile_id')
+                            ->where('user.user_id', $userID)
+                            ->get()
+                            ->getRowArray();
     }
 }

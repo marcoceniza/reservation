@@ -1,0 +1,62 @@
+ERROR - 2023-06-14 17:39:59 --> mysqli_sql_exception: Unknown column 'name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `custome...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `custome...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `custome...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `custome...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(40): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(116): App\Models\DashboardModel->updateRoom('19', Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->updateRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-14 17:39:59 --> Unknown column 'name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `customer` SET `name` = \'Accusantium dolores \', `capacity` = \'6\', `price` = \'15.00\', `category` = \'0\', `location` = \'In aut maxime id iru\', `updated_at` = \'2023-06-14 17:39:59\'
+WHERE `room_type_id` = \'19\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `customer` SET `name` = \'Accusantium dolores \', `capacity` = \'6\', `price` = \'15.00\', `category` = \'0\', `location` = \'In aut maxime id iru\', `updated_at` = \'2023-06-14 17:39:59\'
+WHERE `room_type_id` = \'19\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `customer` SET `name` = \'Accusantium dolores \', `capacity` = \'6\', `price` = \'15.00\', `category` = \'0\', `location` = \'In aut maxime id iru\', `updated_at` = \'2023-06-14 17:39:59\'
+WHERE `room_type_id` = \'19\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `customer` SET `name` = :name:, `capacity` = :capacity:, `price` = :price:, `category` = :category:, `location` = :location:, `updated_at` = :updated_at:
+WHERE `room_type_id` = :room_type_id:', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(40): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Dashboard.php(116): App\Models\DashboardModel->updateRoom('19', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->updateRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-14 17:58:51 --> mysqli_sql_exception: Unknown column 'name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `custome...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `custome...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `custome...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `custome...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(40): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(116): App\Models\DashboardModel->updateRoom('19', Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->updateRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-14 17:58:51 --> Unknown column 'name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('UPDATE `customer` SET `name` = \'Accusantium dolores \', `capacity` = \'6\', `price` = \'15.00\', `category` = \'0\', `location` = \'In aut maxime id iru\', `updated_at` = \'2023-06-14 17:58:51\'
+WHERE `room_type_id` = \'19\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `customer` SET `name` = \'Accusantium dolores \', `capacity` = \'6\', `price` = \'15.00\', `category` = \'0\', `location` = \'In aut maxime id iru\', `updated_at` = \'2023-06-14 17:58:51\'
+WHERE `room_type_id` = \'19\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `customer` SET `name` = \'Accusantium dolores \', `capacity` = \'6\', `price` = \'15.00\', `category` = \'0\', `location` = \'In aut maxime id iru\', `updated_at` = \'2023-06-14 17:58:51\'
+WHERE `room_type_id` = \'19\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `customer` SET `name` = :name:, `capacity` = :capacity:, `price` = :price:, `category` = :category:, `location` = :location:, `updated_at` = :updated_at:
+WHERE `room_type_id` = :room_type_id:', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(40): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\Dashboard.php(116): App\Models\DashboardModel->updateRoom('19', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->updateRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')

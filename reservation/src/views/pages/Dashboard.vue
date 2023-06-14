@@ -28,6 +28,7 @@
                                 <th>Room Name</th>
                                 <th>Category</th>
                                 <th>Price</th>
+                                <th>Reserve Date</th>
                                 <th>Start Date</th>
                                 <th>End Date</th>
                                 <th>Action</th>
@@ -39,6 +40,7 @@
                                 <td>{{ room.name }}</td>
                                 <td>{{ formatCategory(room.category) }}</td>
                                 <td>${{ room.price }}</td>
+                                <td>{{ formatDate(room.reserved_date) }}</td>
                                 <td>--:--:--</td>
                                 <td>--:--:--</td>
                                 <td class="d-flex justify-content-center btn_action">
@@ -76,7 +78,7 @@
                     <li class="list-group-item">Price: ${{ viewReserve.price }}</li>
                     <li class="list-group-item">Category: {{ formatCategory(viewReserve.category) }}</li>
                     <li class="list-group-item">Location: {{ viewReserve.price }}</li>
-                    <li class="list-group-item">Created At: {{ formatDate(viewReserve.created_at) }}</li>
+                    <li class="list-group-item">Reserved Date: {{ formatDate(viewReserve.reserved_date) }}</li>
                 </ul>
 
                 <h5 class="mt-4 mb-3"><i class="bi bi-info-circle-fill"></i> Customer Info</h5>
@@ -139,7 +141,7 @@
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h4 class="modal-title"><i class="bi bi-trash-fill"></i> Delete Message</h4>
+                    <h5 class="modal-title"><i class="bi bi-trash-fill"></i> Confirm Delete</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 

@@ -10,7 +10,7 @@
                 <div class="d-flex justify-content-between align-items-center mt-3 mb-3">
                     <h5><i class="bi bi-person-fill"></i> Profile</h5>
                 </div>
-                <div class="row bg-body-tertiary p-4 profile_inner">
+                <div class="row p-4 profile_inner">
                     <div class="col-2 profile_box">
                         <div class="profile_con">
                             <figure><img class="img-fluid img-thumbnail mx-auto d-block" src="https://placehold.co/400" alt=""></figure>
@@ -40,6 +40,9 @@
                                     </ul> 
                                 </div>
                                 <div class="tab-pane fade" id="updateProfile-tab-pane" role="tabpanel" aria-labelledby="updateProfile-tab" tabindex="0">
+                                    <div v-if="updateMessage" :class="{'alert': true, 'alert-danger': !updateMessage.isSuccess, 'alert-success': updateMessage.isSuccess}">
+                                        <strong>{{ updateMessage.message }}</strong>
+                                    </div>
                                     <form action="/action_page.php">
                                         <div class="d-flex">
                                             <div class="mb-3 mt-3 mx-2 flex-fill">
@@ -152,13 +155,13 @@ export default {
                 };
 
                 if(res.data.success) {
-                    // this.editFirstname = '';
-                    // this.editLastname = '';
-                    // this.editAge = '';
-                    // this.editPhone = '';
-                    // this.editAddress = '';
-                    // this.editEmail = '';
-                    // this.editPassword = '';
+                    this.editFirstname = '';
+                    this.editLastname = '';
+                    this.editAge = '';
+                    this.editPhone = '';
+                    this.editAddress = '';
+                    this.editEmail = '';
+                    this.editPassword = '';
 
                     setTimeout(() => {
                         window.location.reload();
@@ -175,7 +178,7 @@ export default {
                 if(res.user_id == this.user.user_id) {
                     this.adminDatas = res;
                     this.editEmail = res.email;
-                    this.editPassword = res.password;
+                    this.editPassword = 'admin';
                     this.editFirstname = res.first_name;
                     this.editLastname = res.last_name;
                     this.editAge = res.age;
@@ -210,7 +213,7 @@ thead tr th{text-align: center;}
 .profile_box h5 span{display: block; color: #a2a2a2; font-size: 18px;}
 .profile_box ul{margin: 25px 0 0;}
 .profile_box ul li{margin-bottom: 6px; color: #555;}
-.profile_inner .profile_con{box-shadow: 0px 0px 5px #c8c8c8; border-radius: 4px; padding: 12px 8px 40px; min-height: 350px;}
+.profile_inner .profile_con{box-shadow: 0px 0px 5px #c8c8c8; border-radius: 4px; padding: 12px 8px 25px; min-height: 350px;margin-bottom: 30px;}
 .showPassIcon{position: relative;}
 .showPassIcon i{position: absolute; right: 8px; bottom: 7px; z-index: 12; background: #fff; padding-left: 4px;cursor: pointer;}
 </style>

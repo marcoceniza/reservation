@@ -18,7 +18,12 @@ class Register extends BaseController
     {
         $post = $this->request->getPost(['email', 'password', 'firstname', 'lastname', 'age', 'phone', 'address']);
 
-        // if(empty($post['email']) || empty($post['password'])) return $this->response->setJSON(['success' => false, 'result' => 'All Fields are Required!']);
+        if(empty($post['firstname']) || empty($post['lastname']) || empty($post['age']) || empty($post['phone']) || empty($post['address']) || empty($post['email']) || empty($post['password'])) {
+            return $this->response->setJSON([
+                'success' => false,
+                'result' => 'All Fields are Required!'
+            ]);
+        }
 
         $profileData = [
             'first_name' => $post['firstname'],
@@ -62,17 +67,27 @@ class Register extends BaseController
     {
         $post = $this->request->getPost(['userID', 'firstname', 'lastname', 'age', 'phone', 'address', 'email', 'password']);
 
-        $data = [
-            'first_name' => $post['firstname'],
-            'last_name' => $post['lastname'],
-            'age' => $post['age'],
-            'phone' => $post['phone'],
-            'address' => $post['address'],
+        if(empty($post['firstname']) || empty($post['lastname']) || empty($post['age']) || empty($post['phone']) || empty($post['address']) || empty($post['email']) || empty($post['password'])) {
+            return $this->response->setJSON([
+                'success' => false,
+                'result' => 'All Fields are Required!'
+            ]);
+        }
+
+        $userData = [
             'email' => $post['email'],
             'password' => password_hash($post['password'], PASSWORD_DEFAULT)
         ];
 
-        $result = $this->model->updateAdmin($post['userID'], $data);
+        $profileData = [
+            'first_name' => $post['firstname'],
+            'last_name' => $post['lastname'],
+            'age' => $post['age'],
+            'phone' => $post['phone'],
+            'address' => $post['address']
+        ];
+
+        $result = $this->model->updateAdmin($post['userID'], $userData, $profileData);
 
         return $this->response->setJSON([
             'success' => true,

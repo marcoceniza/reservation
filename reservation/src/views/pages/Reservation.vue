@@ -77,7 +77,7 @@
                     <li class="list-group-item">Price: ${{ viewReserve.price }}</li>
                     <li class="list-group-item">Category: {{ formatCategory(viewReserve.category) }}</li>
                     <li class="list-group-item">Location: {{ viewReserve.price }}</li>
-                    <li class="list-group-item">Created At: {{ formatDate(viewReserve.created_at) }}</li>
+                    <li class="list-group-item">Reserved Date: {{ formatDate(viewReserve.reserved_date) }}</li>
                     <li class="list-group-item">Start Date: {{ formatDate(viewReserve.start_date) }}</li>
                     <li class="list-group-item">End Date: {{ formatDate(viewReserve.end_date) }} </li>
                     <li class="list-group-item">Status: {{ formatStatus(viewReserve.status, viewReserve.start_date) }} </li>

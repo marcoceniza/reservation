@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2023 at 01:17 AM
+-- Generation Time: Jun 15, 2023 at 12:50 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -34,19 +34,22 @@ CREATE TABLE `customer` (
   `email` varchar(30) NOT NULL,
   `phone` int(11) NOT NULL,
   `room_type_id` int(11) NOT NULL,
-  `created_status` int(11) NOT NULL
+  `created_status` int(11) NOT NULL,
+  `reserved_date` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `customer`
 --
 
-INSERT INTO `customer` (`customer_id`, `first_name`, `last_name`, `email`, `phone`, `room_type_id`, `created_status`) VALUES
-(5, 'Enim distinctio Ven', 'Beatae maxime dolore', 'lyfetan@mailinator.com', 123, 18, 1),
-(6, 'Debitis sed voluptat', 'Minima culpa sed ni', 'kemafogim@mailinator.com', 1234567, 19, 1),
-(7, 'Ea ab velit fugiat ', 'Animi quia perspici', 'qalyxaluf@mailinator.com', 1234, 20, 1),
-(8, 'Do deleniti commodi ', 'Et neque qui duis ir', 'qikysuje@mailinator.com', 123450, 21, 1),
-(17, 'Occaecat reprehender', 'Doloremque ipsam inv', 'maguq@mailinator.com', 213123, 18, 0);
+INSERT INTO `customer` (`customer_id`, `first_name`, `last_name`, `email`, `phone`, `room_type_id`, `created_status`, `reserved_date`) VALUES
+(5, 'Enim distinctio Ven', 'Beatae maxime dolore', 'lyfetan@mailinator.com', 123, 18, 1, '0000-00-00 00:00:00.000000'),
+(6, 'Debitis sed voluptat', 'Minima culpa sed ni', 'kemafogim@mailinator.com', 1234567, 19, 1, '0000-00-00 00:00:00.000000'),
+(7, 'Ea ab velit fugiat ', 'Animi quia perspici', 'qalyxaluf@mailinator.com', 1234, 20, 1, '0000-00-00 00:00:00.000000'),
+(8, 'Do deleniti commodi ', 'Et neque qui duis ir', 'qikysuje@mailinator.com', 123450, 21, 1, '0000-00-00 00:00:00.000000'),
+(18, 'my first name', 'my last name', 'me@mydomain.com', 0, 18, 0, '0000-00-00 00:00:00.000000'),
+(19, 'my first name 2', 'my last name 2', 'me@mydomain.com', 0, 21, 1, '0000-00-00 00:00:00.000000'),
+(20, 'my first name 3', 'my last name 3', 'me@mydomain.com', 0, 19, 1, '2023-06-14 17:16:15.000000');
 
 -- --------------------------------------------------------
 
@@ -68,8 +71,8 @@ CREATE TABLE `profile` (
 --
 
 INSERT INTO `profile` (`profile_id`, `first_name`, `last_name`, `age`, `phone`, `address`) VALUES
-(1, 'my first name', 'my last name', 30, 0, 'full street address'),
-(2, 'my first name', 'my last name', 30, 0, 'full street address');
+(1, 'my first name', 'my last name', 28, 1234567890, 'test address'),
+(2, 'my first name', 'my last name', 30, 1234567890, 'full street address');
 
 -- --------------------------------------------------------
 
@@ -105,7 +108,9 @@ INSERT INTO `reservation` (`reservation_id`, `customer_id`, `room_type_id`, `sta
 (14, 5, 18, '2023-06-08 12:12:00', '2023-06-09 12:22:00', 1),
 (15, 5, 18, '2023-06-06 12:12:00', '2023-06-07 22:22:00', 1),
 (16, 7, 20, '2023-06-13 12:22:00', '2023-06-13 15:33:00', 1),
-(17, 6, 19, '2023-06-14 12:22:00', '2023-06-15 14:02:00', 1);
+(17, 6, 19, '2023-06-14 12:22:00', '2023-06-15 14:02:00', 1),
+(18, 20, 19, '2023-06-21 12:22:00', '2023-06-22 14:32:00', 1),
+(19, 19, 21, '2023-06-20 12:22:00', '2023-06-21 15:32:00', 1);
 
 -- --------------------------------------------------------
 
@@ -154,7 +159,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `email`, `password`, `user_type`, `profile_id`) VALUES
-(6, 'admin@gmail.com', '$2y$10$MT3ZXL5UY4QCEBX9ojCJGec26.8FfYQ9/.G5f9PHirqVlH3LJCFUm', 0, 1),
+(6, 'admin@gmail.com', '$2y$10$0PvbCylAoJjrEuJf5.FoqOYUu0sOvFgh6euYGlQHIAZESDrIjRUUO', 1, 1),
 (7, 'me@mydomain.com', '$2y$10$5XWp39/8Egxt5PgZlX9y8u427kXyt3Wgnxl0c8SNX94GHiKtORJ/a', 0, 2);
 
 --
@@ -203,7 +208,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `profile`
@@ -215,7 +220,7 @@ ALTER TABLE `profile`
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `room_type`

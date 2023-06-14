@@ -19,4 +19,10 @@ class DashboardModel extends Model
         $query = $this->roomTB->get()->getResult();
         return $query;
     }
+
+    public function updateRoom()
+    {
+        $query = $this->roomTB->where('room_type_id', $id)->update($data);
+        return $query;
+    }
 }

@@ -7,11 +7,16 @@ use App\Models\DashboardModel;
 
 class Dashboard extends BaseController
 {
+    protected $model;
+
+    public function __construct()
+    {
+        $this->model = model(DashboardModel::class);
+    }
+
     public function fetchRoomController()
     {
-        $model = model(DashboardModel::class);
-
-        $result = $model->fetchRoom();
+        $result = $this->model->fetchRoom();
 
         return $this->response->setJSON([
             'success' => true,
@@ -21,8 +26,6 @@ class Dashboard extends BaseController
 
     public function addRoomController()
     {
-        $model = new DashboardModel();
-
         $post = $this->request->getPost(['name', 'capacity', 'price', 'category', 'location']);
         $file = $this->request->getFile('photo');
 
@@ -48,25 +51,23 @@ class Dashboard extends BaseController
             ];
         }
 
-        $result = $model->addRoom($data);
+        $result = $this->model->addRoom($data);
 
         return $this->response->setJSON([
             'success' => true,
-            'result' => 'Reserve Successfully! Reloading...'
+            'result' => 'Reserved Successfully!'
         ]);
     }
 
     public function setCreatedStatusController() 
     {
-        $model = new DashboardModel();
-
-        $post = $this->request->getPost();
+        $post = $this->request->getPost(['customerID', 'status']);
 
         $data = [
             'created_status' => $post['status']
         ];
 
-        $result = $model->setCreatedStatus($post['customerID'], $data);
+        $result = $this->model->setCreatedStatus($post['customerID'], $data);
 
         return $this->response->setJSON([
             'success' => true,
@@ -76,10 +77,7 @@ class Dashboard extends BaseController
 
     public function updateRoomController()
     {
-        $model = new DashboardModel();
-
-        $post = $this->request->getPost(['name', 'capacity', 'price', 'category', 'location']);
-        $id = $this->request->getPost('roomID');
+        $post = $this->request->getPost(['roomID', 'name', 'capacity', 'price', 'category', 'location']);
         $file = $this->request->getFile('photo');
 
         if(empty($post['name']) || empty($post['capacity']) || empty($post['price']) || empty($post['location'])) {
@@ -115,29 +113,27 @@ class Dashboard extends BaseController
             ];
         }
 
-        $result = $model->updateRoom($id, $data);
+        $result = $this->model->updateRoom($post['roomID'], $data);
 
         return $this->response->setJSON([
             'success' => true,
-            'result' => 'Updated Successfully! Reloading...'
+            'result' => 'Updated Successfully!'
         ]);
     }
 
     public function deleteRoomController()
     {
-        $model = new DashboardModel();
-
         $post = $this->request->getPost(['customerID']);
 
         $data = [
             'customer_id' => $post['customerID']
         ];
 
-        $result = $model->deleteRoom($data);
+        $result = $this->model->deleteRoom($data);
 
         return $this->response->setJSON([
             'success' => true,
-            'result' => 'Deleted Successfully! Reloading...'
+            'result' => 'Deleted Successfully!'
         ]);
     }
 }

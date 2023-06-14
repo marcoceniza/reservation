@@ -20,7 +20,6 @@ class ScheduleModel extends Model
                                 ->join('room_type', 'room_type.room_type_id = reservation.room_type_id')
                                 ->get()
                                 ->getResult();
-
         return $query;
     }
 
