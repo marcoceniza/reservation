@@ -20,9 +20,21 @@ class DashboardModel extends Model
         return $query;
     }
 
-    public function updateRoom()
+    public function addRoom($data)
+    {
+        $query = $this->roomTB->insert($data);
+        return $query;
+    }
+
+    public function updateRoom($id, $data)
     {
         $query = $this->roomTB->where('room_type_id', $id)->update($data);
+        return $query;
+    }
+
+    public function deleteRoom($data)
+    {
+        $query = $this->roomTB->delete($data);
         return $query;
     }
 }

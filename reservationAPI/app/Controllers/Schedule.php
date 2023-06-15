@@ -53,6 +53,13 @@ class Schedule extends BaseController
     public function updateScheduleController()
     {
         $post = $this->request->getPost(['startDate', 'endDate', 'reserveID']);
+
+        if(empty($post['startDate']) || empty($post['endDate'])) {
+            return $this->response->setJSON([
+                'success' => false,
+                'result' => 'All Fields are Required!'
+            ]);
+        }
         
         $data = [
             'start_date' => $post['startDate'],

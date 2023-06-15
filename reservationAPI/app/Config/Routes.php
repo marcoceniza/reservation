@@ -34,10 +34,10 @@ $routes->post('login', 'Login::loginController');
 $routes->post('register', 'Register::registerController');
 
 // Dashboard 
-$routes->get('fetchRoom', 'Dashboard::fetchRoomController');
-$routes->post('addRoom', 'Dashboard::addRoomController');
-$routes->post('updateRoom', 'Dashboard::updateRoomController');
-$routes->post('deleteRoom', 'Dashboard::deleteRoomController');
+$routes->get('fetchCustomerReserve', 'Dashboard::fetchCustomerReserveController');
+$routes->post('addCustomerReserve', 'Dashboard::addCustomerReserveController');
+$routes->post('updateCustomerReserve', 'Dashboard::updateCustomerReserveController');
+$routes->post('deleteCustomerReserve', 'Dashboard::deleteCustomerReserveController');
 
 // Home
 $routes->post('reserveRoom', 'Home::addRoomAndContactInfoController');

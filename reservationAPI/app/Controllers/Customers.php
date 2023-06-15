@@ -51,7 +51,7 @@ class Customers extends BaseController
 
             return $this->response->setJSON([
                 'success' => true,
-                'result' => 'Updated Successfully! Reloading...'
+                'result' => 'Updated Successfully!'
             ]);
 
         } catch (\Exception $error) {

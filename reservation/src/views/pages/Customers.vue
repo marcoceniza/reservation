@@ -20,7 +20,7 @@
                     <div class="spinner-grow text-muted spinner-grow-sm"></div>
                     <div class="spinner-grow text-muted spinner-grow-sm"></div>
                 </div>
-                <div v-else-if="customers.length !== 0" class="table-responsive">
+                <div v-else class="table-responsive">
                     <DataTable class="table table-striped" id="myTable">
                         <thead class="table-dark">
                             <tr>
@@ -46,14 +46,11 @@
                         </tbody>
                     </DataTable>
                 </div>
-                <div v-else class="text-center mt-4">
-                    <p class="text-muted">No Data</p>
-                </div>
             </div>
         </section>
     </div>
 
-    <!-- Modal for Updating Room -->
+    <!-- Modal for Updating Customer -->
     <div class="modal fade" id="updateRoomModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -97,7 +94,7 @@
                             <span class="spinner-grow spinner-grow-sm"></span>
                             Updating...
                         </button>
-                        <button v-else @click.prevent="updateRoom" type="submit" class="btn btn-primary btn-block">Update</button>
+                        <button v-else @click.prevent="updateCustomer" type="submit" class="btn btn-primary btn-block">Update</button>
                     </div>
                 </form> 
             </div>
@@ -143,7 +140,7 @@ export default {
                 }
             });
         },
-        updateRoom() {
+        updateCustomer() {
             this.loadingState = true;
             const formData = new FormData();
             formData.append('customerID', this.customerID);

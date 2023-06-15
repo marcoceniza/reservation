@@ -210,7 +210,7 @@ thead tr th{text-align: center;}
 .dash_con section ul li a:hover{opacity: 0.8;}
 .dash_con section ul li a i{padding-right: 5px;}
 .profile_box h5{text-align: center;}
-.profile_box h5 span{display: block; color: #a2a2a2; font-size: 18px;}
+.profile_box h5 span{display: block; color: #a2a2a2; font-size: 14px;margin-top: 4px;}
 .profile_box ul{margin: 25px 0 0;}
 .profile_box ul li{margin-bottom: 6px; color: #555;}
 .profile_inner .profile_con{box-shadow: 0px 0px 5px #c8c8c8; border-radius: 4px; padding: 12px 8px 25px; min-height: 350px;margin-bottom: 30px;}

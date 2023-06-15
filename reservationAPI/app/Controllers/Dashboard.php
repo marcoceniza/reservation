@@ -14,7 +14,7 @@ class Dashboard extends BaseController
         $this->model = model(DashboardModel::class);
     }
 
-    public function fetchRoomController()
+    public function fetchCustomerReserveController()
     {
         $result = $this->model->fetchRoom();
 
@@ -24,7 +24,7 @@ class Dashboard extends BaseController
         ]);
     }
 
-    public function addRoomController()
+    public function addCustomerReserveController()
     {
         $post = $this->request->getPost(['name', 'capacity', 'price', 'category', 'location']);
         $file = $this->request->getFile('photo');
@@ -75,7 +75,7 @@ class Dashboard extends BaseController
         ]);
     }
 
-    public function updateRoomController()
+    public function updateCustomerReserveController()
     {
         $post = $this->request->getPost(['roomID', 'name', 'capacity', 'price', 'category', 'location']);
         $file = $this->request->getFile('photo');
@@ -121,7 +121,7 @@ class Dashboard extends BaseController
         ]);
     }
 
-    public function deleteRoomController()
+    public function deleteCustomerReserveController()
     {
         $post = $this->request->getPost(['customerID']);
 

@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div id="withAircon" class="container tab-pane fade">
-                <div class="d-flex justify-content-evenly">
+                <div v-if="roomWithAircons != ''" class="d-flex justify-content-evenly">
                     <div v-for="roomWithAircon in roomWithAircons" :key="roomWithAircon" class="card" style="width:400px; margin: 0 4px;">
                         <img class="card-img-top" :src="photoBaseURL + roomWithAircon.photo" alt="">
                         <div class="card-body">
@@ -51,9 +51,12 @@
                         </div>
                     </div>
                 </div>
+                <div v-else class="text-center mt-4">
+                    <p class="text-muted">No Data</p>
+                </div>
             </div>
             <div id="withoutAircon" class="container tab-pane fade">
-                <div class="d-flex justify-content-evenly">
+                <div v-if="roomWithoutAircons != ''" class="d-flex justify-content-evenly">
                     <div v-for="roomWithoutAircon in roomWithoutAircons" :key="roomWithoutAircon" class="card" style="width:400px; margin: 0 4px;">
                         <img class="card-img-top" :src="photoBaseURL + roomWithoutAircon.photo" alt="">
                         <div class="card-body">
@@ -65,6 +68,9 @@
                             <a href="#" @click="chooseRoom(roomWithoutAircon.room_type_id)" data-bs-toggle="modal" data-bs-target="#addCustomerInfoModal" class="btn btn-primary">Reserve Now</a>
                         </div>
                     </div>
+                </div>
+                <div v-else class="text-center mt-4">
+                    <p class="text-muted">No Data</p>
                 </div>
             </div>
         </div>
@@ -157,7 +163,7 @@
         <div class="modal_content">
             <i class="bi bi-check-circle"></i>
             <h3>AWESOME!</h3>
-            <p>You're <strong>Booking Reservation</strong> was successfully submitted. <span>Plese wait for a call from us, for confirmation. Thank you.</span></p>
+            <p>You're <strong>Booking Reservation</strong> was successfully submitted. <span>Plese wait for a call from us for confirmation. Thank you.</span></p>
             <button @click="successReservation" class="btn btn-success">Done</button>
         </div>
     </div>
@@ -190,7 +196,7 @@ export default {
     },
     methods: {
         successReservation() {
-            setTimeout(() => { window.location.reload() }, 2000);
+            setTimeout(() => { window.location.reload() }, 1000);
         },
         addCustomerInfo() {
             this.loadingState = true;
@@ -237,8 +243,8 @@ export default {
         },
         formatCategory(num) {
             let convertToNumber = parseInt(num);
-            if(convertToNumber == 1) return num = 'w/ Aircon';
-            else return num = 'w/o Aircon';
+            if(convertToNumber == 1) return num = 'With Aircon';
+            else return num = 'Without Aircon';
         },
     },
     mounted() {

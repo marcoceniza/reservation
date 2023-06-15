@@ -20,12 +20,12 @@
                     <div class="spinner-grow text-muted spinner-grow-sm"></div>
                     <div class="spinner-grow text-muted spinner-grow-sm"></div>
                 </div>
-                <div v-else-if="rooms != ''" class="table-responsive">
+                <div v-else class="table-responsive">
                     <DataTable class="table table-striped" id="myTable">
                         <thead class="table-dark">
                             <tr>
                                 <th>ID</th>
-                                <th>Room Name</th>
+                                <th>Name</th>
                                 <th>Category</th>
                                 <th>Price</th>
                                 <th>Reserve Date</th>
@@ -35,7 +35,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="room in rooms" :key="room" v-show="room.created_status == 0">
+                            <tr v-for="room in filterRooms" :key="room.customer_id">
                                 <td>{{ room.room_type_id }}</td>
                                 <td>{{ room.name }}</td>
                                 <td>{{ formatCategory(room.category) }}</td>
@@ -52,9 +52,6 @@
                         </tbody>
                     </DataTable>
                 </div>
-                <div v-else class="text-center mt-4">
-                    <p class="text-muted">No Data</p>
-                </div>
             </div>
         </section>
     </div>
@@ -65,7 +62,7 @@
             <div class="modal-content">
 
             <div class="modal-header">
-                <h5 class="modal-title"><i class="bi bi-list-check"></i> Room Details</h5>
+                <h5 class="modal-title"><i class="bi bi-list-check"></i> Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
@@ -73,11 +70,11 @@
                 <figure><img class="img-fluid rounded mx-auto d-block" :src="photoBaseURL + viewReserve.photo" alt=""></figure>
                 <ul class="list-group">
                     <li class="list-group-item">ID: {{ viewReserve.room_type_id }}</li>
-                    <li class="list-group-item">Room Name: {{ viewReserve.name }}</li>
+                    <li class="list-group-item">Name: {{ viewReserve.name }}</li>
                     <li class="list-group-item">Capacity: {{ viewReserve.capacity }} pax</li>
                     <li class="list-group-item">Price: ${{ viewReserve.price }}</li>
                     <li class="list-group-item">Category: {{ formatCategory(viewReserve.category) }}</li>
-                    <li class="list-group-item">Location: {{ viewReserve.price }}</li>
+                    <li class="list-group-item">Location: {{ viewReserve.location }}</li>
                     <li class="list-group-item">Reserved Date: {{ formatDate(viewReserve.reserved_date) }}</li>
                 </ul>
 
@@ -149,10 +146,10 @@
                     <div v-if="deleteConfirmMessage" :class="{'alert': true, 'alert-danger': !deleteConfirmMessage.isSuccess, 'alert-success': deleteConfirmMessage.isSuccess}">
                         <strong>{{ deleteConfirmMessage.message }}</strong>
                     </div>
-                    <p>Are you sure you want to delete?</p>
+                    <p v-if="!deleteConfirmMessage">Are you sure you want to delete?</p>
                 </div>
 
-                <div class="modal-footer">
+                <div v-if="!deleteConfirmMessage" class="modal-footer">
                     <button v-if="loadingState" class="btn btn-primary" disabled>
                         <span class="spinner-grow spinner-grow-sm"></span>
                         Deleting...
@@ -199,6 +196,11 @@ export default {
             getCustomerID: '',
             getRoomID: '',
             photoBaseURL: 'http://localhost:8080/uploads/'
+        }
+    },
+    computed: {
+        filterRooms() {
+            return this.rooms.filter(room => room.created_status == 0);
         }
     },
     methods: {
@@ -294,7 +296,7 @@ export default {
         }
     },
     mounted() {
-        axiosRes.get('/fetchRoom').then(res => {
+        axiosRes.get('/fetchCustomerReserve').then(res => {
             this.loadingState2 = false;
             this.rooms = res.data.result;
         });

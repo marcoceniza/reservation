@@ -1,0 +1,647 @@
+ERROR - 2023-06-15 19:09:14 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`reservation_db`.`reservation`, CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`)) in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('DELETE FROM `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2791): CodeIgniter\Database\BaseConnection->query('DELETE FROM `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(46): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(132): App\Models\DashboardModel->deleteRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->deleteRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 19:09:14 --> Cannot delete or update a parent row: a foreign key constraint fails (`reservation_db`.`reservation`, CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2791): CodeIgniter\Database\BaseConnection->query('DELETE FROM `customer`
+WHERE `customer_id` = :customer_id:', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(46): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Dashboard.php(132): App\Models\DashboardModel->deleteRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->deleteRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 19:25:22 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`reservation_db`.`reservation`, CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`)) in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('DELETE FROM `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2791): CodeIgniter\Database\BaseConnection->query('DELETE FROM `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(46): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(132): App\Models\DashboardModel->deleteRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->deleteRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 19:25:22 --> Cannot delete or update a parent row: a foreign key constraint fails (`reservation_db`.`reservation`, CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2791): CodeIgniter\Database\BaseConnection->query('DELETE FROM `customer`
+WHERE `customer_id` = :customer_id:', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(46): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Dashboard.php(132): App\Models\DashboardModel->deleteRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->deleteRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 19:25:47 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`reservation_db`.`reservation`, CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`)) in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('DELETE FROM `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2791): CodeIgniter\Database\BaseConnection->query('DELETE FROM `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(46): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(132): App\Models\DashboardModel->deleteRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->deleteRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 19:25:47 --> Cannot delete or update a parent row: a foreign key constraint fails (`reservation_db`.`reservation`, CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2791): CodeIgniter\Database\BaseConnection->query('DELETE FROM `customer`
+WHERE `customer_id` = :customer_id:', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(46): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Dashboard.php(132): App\Models\DashboardModel->deleteRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->deleteRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 19:25:58 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`reservation_db`.`reservation`, CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`)) in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('DELETE FROM `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2791): CodeIgniter\Database\BaseConnection->query('DELETE FROM `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(46): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(132): App\Models\DashboardModel->deleteRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->deleteRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 19:25:58 --> Cannot delete or update a parent row: a foreign key constraint fails (`reservation_db`.`reservation`, CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2791): CodeIgniter\Database\BaseConnection->query('DELETE FROM `customer`
+WHERE `customer_id` = :customer_id:', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(46): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Dashboard.php(132): App\Models\DashboardModel->deleteRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->deleteRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 19:26:40 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`reservation_db`.`reservation`, CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`)) in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('DELETE FROM `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2791): CodeIgniter\Database\BaseConnection->query('DELETE FROM `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(46): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(132): App\Models\DashboardModel->deleteRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->deleteRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 19:26:40 --> Cannot delete or update a parent row: a foreign key constraint fails (`reservation_db`.`reservation`, CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2791): CodeIgniter\Database\BaseConnection->query('DELETE FROM `customer`
+WHERE `customer_id` = :customer_id:', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(46): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Dashboard.php(132): App\Models\DashboardModel->deleteRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->deleteRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 19:27:53 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`reservation_db`.`reservation`, CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`)) in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('DELETE FROM `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2791): CodeIgniter\Database\BaseConnection->query('DELETE FROM `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(46): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(132): App\Models\DashboardModel->deleteRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->deleteRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 19:27:53 --> Cannot delete or update a parent row: a foreign key constraint fails (`reservation_db`.`reservation`, CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2791): CodeIgniter\Database\BaseConnection->query('DELETE FROM `customer`
+WHERE `customer_id` = :customer_id:', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(46): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Dashboard.php(132): App\Models\DashboardModel->deleteRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->deleteRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 19:30:04 --> mysqli_sql_exception: Cannot delete or update a parent row: a foreign key constraint fails (`reservation_db`.`reservation`, CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`)) in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('DELETE FROM `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2791): CodeIgniter\Database\BaseConnection->query('DELETE FROM `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(46): CodeIgniter\Database\BaseBuilder->delete()
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(132): App\Models\DashboardModel->deleteRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->deleteRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 19:30:04 --> Cannot delete or update a parent row: a foreign key constraint fails (`reservation_db`.`reservation`, CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`))
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('DELETE FROM `customer`
+WHERE `customer_id` = (\'20\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2791): CodeIgniter\Database\BaseConnection->query('DELETE FROM `customer`
+WHERE `customer_id` = :customer_id:', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(46): CodeIgniter\Database\BaseBuilder->delete()
+ 6 APPPATH\Controllers\Dashboard.php(132): App\Models\DashboardModel->deleteRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->deleteRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 20:48:41 --> mysqli_sql_exception: Unknown column 'name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 20:48:41 --> Unknown column 'name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Bohol Beach Club, Bohol\', \'12\', \'32\', \'1\', \'Bohol\', \'1686862121_ef0f83d15778bde442c7.png\', \'2023-06-15 20:48:41\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Bohol Beach Club, Bohol\', \'12\', \'32\', \'1\', \'Bohol\', \'1686862121_ef0f83d15778bde442c7.png\', \'2023-06-15 20:48:41\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Bohol Beach Club, Bohol\', \'12\', \'32\', \'1\', \'Bohol\', \'1686862121_ef0f83d15778bde442c7.png\', \'2023-06-15 20:48:41\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (:name:, :capacity:, :price:, :category:, :location:, :photo:, :created_at:)', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 20:51:38 --> mysqli_sql_exception: Unknown column 'name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 20:51:38 --> Unknown column 'name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'my full name\', \'city name\', \'city name\', \'\', \'city name\', \'1686862298_7ef0e12758fe9da25ccd.png\', \'2023-06-15 20:51:38\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'my full name\', \'city name\', \'city name\', \'\', \'city name\', \'1686862298_7ef0e12758fe9da25ccd.png\', \'2023-06-15 20:51:38\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'my full name\', \'city name\', \'city name\', \'\', \'city name\', \'1686862298_7ef0e12758fe9da25ccd.png\', \'2023-06-15 20:51:38\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (:name:, :capacity:, :price:, :category:, :location:, :photo:, :created_at:)', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 20:53:59 --> mysqli_sql_exception: Unknown column 'name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 20:53:59 --> Unknown column 'name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'my full name\', \'city name\', \'city name\', \'\', \'city name\', \'1686862439_a284c7b4281728b45dde.png\', \'2023-06-15 20:53:59\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'my full name\', \'city name\', \'city name\', \'\', \'city name\', \'1686862439_a284c7b4281728b45dde.png\', \'2023-06-15 20:53:59\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'my full name\', \'city name\', \'city name\', \'\', \'city name\', \'1686862439_a284c7b4281728b45dde.png\', \'2023-06-15 20:53:59\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (:name:, :capacity:, :price:, :category:, :location:, :photo:, :created_at:)', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 20:56:48 --> mysqli_sql_exception: Unknown column 'name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 20:56:48 --> Unknown column 'name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'my full name\', \'city name\', \'city name\', \'\', \'city name\', \'1686862608_b1bc822f68256940a40a.png\', \'2023-06-15 20:56:48\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'my full name\', \'city name\', \'city name\', \'\', \'city name\', \'1686862608_b1bc822f68256940a40a.png\', \'2023-06-15 20:56:48\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'my full name\', \'city name\', \'city name\', \'\', \'city name\', \'1686862608_b1bc822f68256940a40a.png\', \'2023-06-15 20:56:48\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (:name:, :capacity:, :price:, :category:, :location:, :photo:, :created_at:)', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 20:57:48 --> mysqli_sql_exception: Unknown column 'name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 20:57:48 --> Unknown column 'name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'my full name\', \'city name\', \'city name\', \'\', \'city name\', \'1686862668_719804b3e9c7201a1c19.png\', \'2023-06-15 20:57:48\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'my full name\', \'city name\', \'city name\', \'\', \'city name\', \'1686862668_719804b3e9c7201a1c19.png\', \'2023-06-15 20:57:48\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'my full name\', \'city name\', \'city name\', \'\', \'city name\', \'1686862668_719804b3e9c7201a1c19.png\', \'2023-06-15 20:57:48\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (:name:, :capacity:, :price:, :category:, :location:, :photo:, :created_at:)', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 21:00:27 --> mysqli_sql_exception: Unknown column 'name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 21:00:27 --> Unknown column 'name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'my full name\', \'city name\', \'city name\', \'\', \'city name\', \'1686862827_a3231da1c7d43ed1cc2b.png\', \'2023-06-15 21:00:27\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'my full name\', \'city name\', \'city name\', \'\', \'city name\', \'1686862827_a3231da1c7d43ed1cc2b.png\', \'2023-06-15 21:00:27\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'my full name\', \'city name\', \'city name\', \'\', \'city name\', \'1686862827_a3231da1c7d43ed1cc2b.png\', \'2023-06-15 21:00:27\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (:name:, :capacity:, :price:, :category:, :location:, :photo:, :created_at:)', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 21:03:23 --> mysqli_sql_exception: Unknown column 'name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 21:03:23 --> Unknown column 'name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'my full name\', \'city name\', \'city name\', \'\', \'city name\', \'1686863003_fe0981cdd593e9c98410.png\', \'2023-06-15 21:03:23\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'my full name\', \'city name\', \'city name\', \'\', \'city name\', \'1686863003_fe0981cdd593e9c98410.png\', \'2023-06-15 21:03:23\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'my full name\', \'city name\', \'city name\', \'\', \'city name\', \'1686863003_fe0981cdd593e9c98410.png\', \'2023-06-15 21:03:23\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (:name:, :capacity:, :price:, :category:, :location:, :photo:, :created_at:)', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 21:03:44 --> mysqli_sql_exception: Unknown column 'name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 21:03:44 --> Unknown column 'name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Et vitae aut dolor d\', \'Eius alias eligendi \', \'Ad in dolor voluptas\', \'1\', \'Quasi dolor sed in e\', \'1686863024_42010ec5a2910a9c7c80.png\', \'2023-06-15 21:03:44\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Et vitae aut dolor d\', \'Eius alias eligendi \', \'Ad in dolor voluptas\', \'1\', \'Quasi dolor sed in e\', \'1686863024_42010ec5a2910a9c7c80.png\', \'2023-06-15 21:03:44\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Et vitae aut dolor d\', \'Eius alias eligendi \', \'Ad in dolor voluptas\', \'1\', \'Quasi dolor sed in e\', \'1686863024_42010ec5a2910a9c7c80.png\', \'2023-06-15 21:03:44\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (:name:, :capacity:, :price:, :category:, :location:, :photo:, :created_at:)', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 21:04:34 --> mysqli_sql_exception: Unknown column 'name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 21:04:34 --> Unknown column 'name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Dolore vel ut aut co\', \'Odit consequatur mol\', \'Voluptatem Non sed \', \'1\', \'Neque dolor molestia\', \'1686863074_628a57689b40611b5d8d.png\', \'2023-06-15 21:04:34\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Dolore vel ut aut co\', \'Odit consequatur mol\', \'Voluptatem Non sed \', \'1\', \'Neque dolor molestia\', \'1686863074_628a57689b40611b5d8d.png\', \'2023-06-15 21:04:34\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Dolore vel ut aut co\', \'Odit consequatur mol\', \'Voluptatem Non sed \', \'1\', \'Neque dolor molestia\', \'1686863074_628a57689b40611b5d8d.png\', \'2023-06-15 21:04:34\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (:name:, :capacity:, :price:, :category:, :location:, :photo:, :created_at:)', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 21:05:28 --> mysqli_sql_exception: Unknown column 'name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 21:05:28 --> Unknown column 'name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Velit qui sunt volup\', \'Est ullam autem occa\', \'Debitis aperiam quia\', \'0\', \'Dolores pariatur Un\', \'1686863128_f8f4c85e1348ad194d3a.png\', \'2023-06-15 21:05:28\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Velit qui sunt volup\', \'Est ullam autem occa\', \'Debitis aperiam quia\', \'0\', \'Dolores pariatur Un\', \'1686863128_f8f4c85e1348ad194d3a.png\', \'2023-06-15 21:05:28\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Velit qui sunt volup\', \'Est ullam autem occa\', \'Debitis aperiam quia\', \'0\', \'Dolores pariatur Un\', \'1686863128_f8f4c85e1348ad194d3a.png\', \'2023-06-15 21:05:28\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (:name:, :capacity:, :price:, :category:, :location:, :photo:, :created_at:)', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+CRITICAL - 2023-06-15 21:07:59 --> Class 'App\Models\RoomsModel' not found
+in APPPATH\Controllers\Rooms.php on line 32.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Rooms->addRoomController()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rooms))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+CRITICAL - 2023-06-15 21:09:10 --> Class 'App\Models\RoomsModel' not found
+in APPPATH\Controllers\Rooms.php on line 32.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Rooms->addRoomController()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rooms))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+CRITICAL - 2023-06-15 21:10:54 --> Allowed fields must be specified for model: "App\Models\DashboardModel"
+in SYSTEMPATH\BaseModel.php on line 1242.
+ 1 SYSTEMPATH\BaseModel.php(1242): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\DashboardModel')
+ 2 SYSTEMPATH\BaseModel.php(757): CodeIgniter\BaseModel->doProtectFields([...])
+ 3 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 4 APPPATH\Controllers\Rooms.php(57): CodeIgniter\Model->insert([...])
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Rooms->addRoomController()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Rooms))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 21:16:50 --> mysqli_sql_exception: Unknown column 'name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 21:16:50 --> Unknown column 'name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Qui unde adipisicing\', \'Est enim omnis dolor\', \'Omnis aut omnis veni\', \'1\', \'Consequatur Odit au\', \'1686863810_64be6e5f03702291cf77.png\', \'2023-06-15 21:16:50\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Qui unde adipisicing\', \'Est enim omnis dolor\', \'Omnis aut omnis veni\', \'1\', \'Consequatur Odit au\', \'1686863810_64be6e5f03702291cf77.png\', \'2023-06-15 21:16:50\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Qui unde adipisicing\', \'Est enim omnis dolor\', \'Omnis aut omnis veni\', \'1\', \'Consequatur Odit au\', \'1686863810_64be6e5f03702291cf77.png\', \'2023-06-15 21:16:50\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (:name:, :capacity:, :price:, :category:, :location:, :photo:, :created_at:)', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 21:17:19 --> mysqli_sql_exception: Unknown column 'name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 21:17:19 --> Unknown column 'name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Voluptatibus natus a\', \'Deserunt sit dolor e\', \'Rem aspernatur quia \', \'0\', \'Rerum commodo aliqua\', \'1686863839_bc2046fa22e6c20abaf3.png\', \'2023-06-15 21:17:19\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Voluptatibus natus a\', \'Deserunt sit dolor e\', \'Rem aspernatur quia \', \'0\', \'Rerum commodo aliqua\', \'1686863839_bc2046fa22e6c20abaf3.png\', \'2023-06-15 21:17:19\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Voluptatibus natus a\', \'Deserunt sit dolor e\', \'Rem aspernatur quia \', \'0\', \'Rerum commodo aliqua\', \'1686863839_bc2046fa22e6c20abaf3.png\', \'2023-06-15 21:17:19\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (:name:, :capacity:, :price:, :category:, :location:, :photo:, :created_at:)', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 21:20:25 --> mysqli_sql_exception: Unknown column 'name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 21:20:25 --> Unknown column 'name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Qui rerum aut aliqui\', \'Sed incidunt except\', \'Omnis sit quis illo \', \'1\', \'In officia dignissim\', \'1686864025_12205944581f42155030.png\', \'2023-06-15 21:20:25\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Qui rerum aut aliqui\', \'Sed incidunt except\', \'Omnis sit quis illo \', \'1\', \'In officia dignissim\', \'1686864025_12205944581f42155030.png\', \'2023-06-15 21:20:25\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Qui rerum aut aliqui\', \'Sed incidunt except\', \'Omnis sit quis illo \', \'1\', \'In officia dignissim\', \'1686864025_12205944581f42155030.png\', \'2023-06-15 21:20:25\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (:name:, :capacity:, :price:, :category:, :location:, :photo:, :created_at:)', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 21:21:55 --> mysqli_sql_exception: Unknown column 'name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 21:21:55 --> Unknown column 'name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Nisi perferendis qui\', \'Ipsum quod cum inve\', \'Quia quia laboriosam\', \'1\', \'Amet enim sequi max\', \'1686864115_1c5ce6005284843432f9.png\', \'2023-06-15 21:21:55\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Nisi perferendis qui\', \'Ipsum quod cum inve\', \'Quia quia laboriosam\', \'1\', \'Amet enim sequi max\', \'1686864115_1c5ce6005284843432f9.png\', \'2023-06-15 21:21:55\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Nisi perferendis qui\', \'Ipsum quod cum inve\', \'Quia quia laboriosam\', \'1\', \'Amet enim sequi max\', \'1686864115_1c5ce6005284843432f9.png\', \'2023-06-15 21:21:55\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (:name:, :capacity:, :price:, :category:, :location:, :photo:, :created_at:)', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')
+ERROR - 2023-06-15 21:37:27 --> mysqli_sql_exception: Unknown column 'name' in 'field list' in C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `cu...', 0)
+#1 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cu...')
+#2 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cu...')
+#3 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cu...', Array, false)
+#4 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\app\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom(Array)
+#6 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+#7 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#8 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Marketing\Desktop\Vue\CI Prac\Reservation\reservationAPI\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Market...')
+#11 {main}
+CRITICAL - 2023-06-15 21:37:27 --> Unknown column 'name' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Sint inventore ad re\', \'Sed sed quo ex tempo\', \'Quis tempor quis ut \', \'1\', \'Voluptas dolor tenet\', \'1686865047_76b2d9e07f29109843ff.jpg\', \'2023-06-15 21:37:27\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Sint inventore ad re\', \'Sed sed quo ex tempo\', \'Quis tempor quis ut \', \'1\', \'Voluptas dolor tenet\', \'1686865047_76b2d9e07f29109843ff.jpg\', \'2023-06-15 21:37:27\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (\'Sint inventore ad re\', \'Sed sed quo ex tempo\', \'Quis tempor quis ut \', \'1\', \'Voluptas dolor tenet\', \'1686865047_76b2d9e07f29109843ff.jpg\', \'2023-06-15 21:37:27\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `customer` (`name`, `capacity`, `price`, `category`, `location`, `photo`, `created_at`) VALUES (:name:, :capacity:, :price:, :category:, :location:, :photo:, :created_at:)', [...], false)
+ 5 APPPATH\Models\DashboardModel.php(33): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\Dashboard.php(54): App\Models\DashboardModel->addRoom([...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Dashboard->addRoomController()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Marketing\\Desktop\\Vue\\CI Prac\\Reservation\\reservationAPI\\public\\index.php')

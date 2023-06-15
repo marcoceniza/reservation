@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2023 at 12:50 AM
+-- Generation Time: Jun 16, 2023 at 06:01 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -43,13 +43,8 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`customer_id`, `first_name`, `last_name`, `email`, `phone`, `room_type_id`, `created_status`, `reserved_date`) VALUES
-(5, 'Enim distinctio Ven', 'Beatae maxime dolore', 'lyfetan@mailinator.com', 123, 18, 1, '0000-00-00 00:00:00.000000'),
-(6, 'Debitis sed voluptat', 'Minima culpa sed ni', 'kemafogim@mailinator.com', 1234567, 19, 1, '0000-00-00 00:00:00.000000'),
-(7, 'Ea ab velit fugiat ', 'Animi quia perspici', 'qalyxaluf@mailinator.com', 1234, 20, 1, '0000-00-00 00:00:00.000000'),
-(8, 'Do deleniti commodi ', 'Et neque qui duis ir', 'qikysuje@mailinator.com', 123450, 21, 1, '0000-00-00 00:00:00.000000'),
-(18, 'my first name', 'my last name', 'me@mydomain.com', 0, 18, 0, '0000-00-00 00:00:00.000000'),
-(19, 'my first name 2', 'my last name 2', 'me@mydomain.com', 0, 21, 1, '0000-00-00 00:00:00.000000'),
-(20, 'my first name 3', 'my last name 3', 'me@mydomain.com', 0, 19, 1, '2023-06-14 17:16:15.000000');
+(28, 'John', 'Doe', 'johndoe@gmail.com', 1234567890, 25, 1, '2023-06-16 14:22:23.000000'),
+(29, 'Alice', 'Wonderland', 'alicewonderland@gmail.com', 1234567890, 26, 0, '2023-06-16 14:33:54.000000');
 
 -- --------------------------------------------------------
 
@@ -71,8 +66,7 @@ CREATE TABLE `profile` (
 --
 
 INSERT INTO `profile` (`profile_id`, `first_name`, `last_name`, `age`, `phone`, `address`) VALUES
-(1, 'my first name', 'my last name', 28, 1234567890, 'test address'),
-(2, 'my first name', 'my last name', 30, 1234567890, 'full street address');
+(3, 'Jan', 'Devson', 30, 1234567890, 'full street address');
 
 -- --------------------------------------------------------
 
@@ -94,23 +88,7 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`reservation_id`, `customer_id`, `room_type_id`, `start_date`, `end_date`, `status`) VALUES
-(3, 5, 18, '2023-06-05 00:00:00', '2023-06-06 00:00:00', 1),
-(4, 6, 19, '2023-06-08 00:00:00', '2023-06-09 00:00:00', 1),
-(5, 5, 18, '2023-06-12 12:30:00', '2023-06-15 17:30:00', 1),
-(6, 5, 18, '2023-06-05 14:02:00', '2023-06-07 16:32:00', 1),
-(7, 7, 20, '2023-06-05 16:00:00', '2023-06-07 18:00:00', 1),
-(8, 7, 20, '2023-06-15 16:00:00', '2023-06-16 18:00:00', 1),
-(9, 7, 20, '2023-06-15 16:00:00', '2023-06-16 18:00:00', 1),
-(10, 6, 19, '2023-06-22 17:00:00', '2023-06-23 19:00:00', 1),
-(11, 6, 19, '2023-06-16 17:00:00', '2023-06-17 18:00:00', 1),
-(12, 6, 19, '2023-06-16 22:22:00', '2023-06-17 21:00:00', 1),
-(13, 6, 19, '2023-06-06 12:12:00', '2023-06-07 12:23:00', 1),
-(14, 5, 18, '2023-06-08 12:12:00', '2023-06-09 12:22:00', 1),
-(15, 5, 18, '2023-06-06 12:12:00', '2023-06-07 22:22:00', 1),
-(16, 7, 20, '2023-06-13 12:22:00', '2023-06-13 15:33:00', 1),
-(17, 6, 19, '2023-06-14 12:22:00', '2023-06-15 14:02:00', 1),
-(18, 20, 19, '2023-06-21 12:22:00', '2023-06-22 14:32:00', 1),
-(19, 19, 21, '2023-06-20 12:22:00', '2023-06-21 15:32:00', 1);
+(21, 28, 25, '2023-06-28 12:00:00', '2023-06-30 20:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -135,10 +113,9 @@ CREATE TABLE `room_type` (
 --
 
 INSERT INTO `room_type` (`room_type_id`, `name`, `capacity`, `price`, `photo`, `category`, `location`, `created_at`, `updated_at`) VALUES
-(18, 'Illo quo non quis hi', 12, 24.00, '1685424032_4fe3e7ed977fab31b7ee.jpg', 1, 'Enim maxime cum expe', '2023-05-30 05:20:32', '0000-00-00 00:00:00'),
-(19, 'Accusantium dolores ', 8, 15.00, '1685424129_974741152bd600de7e5c.jpg', 0, 'In aut maxime id iru', '2023-05-30 05:22:09', '0000-00-00 00:00:00'),
-(20, 'Quas ad earum saepe ', 22, 11.00, '1685803909_9fb33475df71623f00f1.jpg', 1, 'Aut quia voluptatibu', '2023-06-03 14:51:49', '0000-00-00 00:00:00'),
-(21, 'Laboris nostrum illu', 32, 44.00, '1685806309_de691a1d62547c15fcdd.jpg', 0, 'Qui velit ipsum in ', '2023-06-03 15:31:49', '2023-06-03 15:33:36');
+(25, 'Bohol Beach Club, Bohol', 12, 23.00, '1686865617_5fdd44add02af909eb84.png', 1, 'Bohol, Philippines', '2023-06-15 21:46:57', '0000-00-00 00:00:00'),
+(26, 'Plantation Bay Resort, Cebu', 12, 16.00, '1686865997_90f94e209c36431c3ae6.jpg', 1, 'Cebu, Philippines', '2023-06-15 21:53:17', '0000-00-00 00:00:00'),
+(29, 'Miniloc Island Resort, El Nido', 12, 44.00, '1686868293_876ebcd0556e9fe14e15.jpg', 0, 'El Nido, Philippines', '2023-06-15 22:31:33', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -159,8 +136,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `email`, `password`, `user_type`, `profile_id`) VALUES
-(6, 'admin@gmail.com', '$2y$10$0PvbCylAoJjrEuJf5.FoqOYUu0sOvFgh6euYGlQHIAZESDrIjRUUO', 1, 1),
-(7, 'me@mydomain.com', '$2y$10$5XWp39/8Egxt5PgZlX9y8u427kXyt3Wgnxl0c8SNX94GHiKtORJ/a', 0, 2);
+(8, 'admin@gmail.com', '$2y$10$V.Ti3mapkbuA8SWuRysWW.5x6Gk13tRRjshML2anel62350DFtn9W', 1, 3);
 
 --
 -- Indexes for dumped tables
@@ -208,31 +184,31 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `profile`
 --
 ALTER TABLE `profile`
-  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `profile_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `reservation_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `room_type`
 --
 ALTER TABLE `room_type`
-  MODIFY `room_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `room_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables

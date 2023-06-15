@@ -21,7 +21,7 @@
                     <div class="spinner-grow text-muted spinner-grow-sm"></div>
                     <div class="spinner-grow text-muted spinner-grow-sm"></div>
                 </div>
-                <div v-else-if="rooms.length !== 0" class="table-responsive">
+                <div v-else class="table-responsive">
                     <DataTable class="table table-striped" id="myTable">
                         <thead class="table-dark">
                             <tr>
@@ -53,9 +53,6 @@
                         </tbody>
                     </DataTable>
                 </div>
-                <div v-else class="text-center mt-4">
-                    <p class="text-muted">No Data</p>
-                </div>
             </div>
         </section>
     </div>
@@ -66,7 +63,7 @@
             <div class="modal-content">
 
             <div class="modal-header">
-                <h5 class="modal-title"><i class="bi bi-list-check"></i> Room Details</h5>
+                <h5 class="modal-title"><i class="bi bi-list-check"></i> Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
@@ -78,7 +75,7 @@
                     <li class="list-group-item">Capacity: {{ viewRoom.capacity }} pax</li>
                     <li class="list-group-item">Price: ${{ viewRoom.price }}</li>
                     <li class="list-group-item">Category: {{ formatCategory(viewRoom.category) }}</li>
-                    <li class="list-group-item">Location: {{ viewRoom.price }}</li>
+                    <li class="list-group-item">Location: {{ viewRoom.location }}</li>
                     <li class="list-group-item">Created At: {{ formatDate(viewRoom.created_at) }}</li>
                 </ul>
             </div>
@@ -93,7 +90,7 @@
             <div class="modal-content">
 
                 <div class="modal-header">
-                    <h5 class="modal-title"><i class="bi bi-plus-circle-fill"></i> Add New Room</h5>
+                    <h5 class="modal-title"><i class="bi bi-plus-circle-fill"></i> Add New</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 
@@ -153,7 +150,7 @@
             <div class="modal-content">
 
             <div class="modal-header">
-                <h5 class="modal-title"><i class="bi bi-pencil-square"></i> Update Room</h5>
+                <h5 class="modal-title"><i class="bi bi-pencil-square"></i> Update Info</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
@@ -181,8 +178,8 @@
                     <div class="mb-3 mt-3">
                         <label for="name" class="form-label">Category: <span class="requiredInput">*</span></label>
                         <select class="form-control" v-model="editCategory">
-                            <option value="1" :selected="editCategory === '1'">With Aircon</option>
-                            <option value="0" :selected="editCategory === '0'">Without Aircon</option>
+                            <option value="">Please select</option>
+                            <option v-for="option in editCategoryOptions" :key="option" :value="option.value">{{ option.label }}</option>
                         </select>
                     </div>
                     <div class="mb-3 mt-3">
@@ -222,10 +219,10 @@
                     <div v-if="deleteConfirmMessage" :class="{'alert': true, 'alert-danger': !deleteConfirmMessage.isSuccess, 'alert-success': deleteConfirmMessage.isSuccess}">
                         <strong>{{ deleteConfirmMessage.message }}</strong>
                     </div>
-                    <p>Are you sure you want to delete?</p>
+                    <p v-if="!deleteConfirmMessage">Are you sure you want to delete?</p>
                 </div>
 
-                <div class="modal-footer">
+                <div v-if="!deleteConfirmMessage" class="modal-footer">
                     <button v-if="loadingState" class="btn btn-primary" disabled>
                         <span class="spinner-grow spinner-grow-sm"></span>
                         Deleting...
@@ -258,8 +255,12 @@ export default {
             price: '',
             category: '',
             categoryOptions: [
-                { value: 1, label: 'With Aircon' },
-                { value: 0, label: 'Without Aircon' }
+                { value: 0, label: 'Without Aircon' },
+                { value: 1, label: 'With Aircon' }
+            ],
+            editCategoryOptions: [
+                { value: 0, label: 'Without Aircon' },
+                { value: 1, label: 'With Aircon' }
             ],
             location: '',
             editName: '',
@@ -313,7 +314,6 @@ export default {
             this.editRoomPhoto !== '' ? formData.append('photo', this.editRoomPhoto) : '';
 
             axiosRes.post('/updateRoom', formData).then(res => {
-                console.log(this.editCategory);
                 this.loadingState = false;
                 this.updateMessage = {
                     message: res.data.result,

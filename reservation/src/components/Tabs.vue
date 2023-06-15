@@ -17,7 +17,7 @@ export default {
         }
     },
     mounted() {
-        axiosRes.get('/fetchRoom').then(res => {
+        axiosRes.get('/fetchCustomerReserve').then(res => {
             res.data.result.forEach(res => {
                 if(res.created_status == 0) {
                     this.pendingReservation.push(res);

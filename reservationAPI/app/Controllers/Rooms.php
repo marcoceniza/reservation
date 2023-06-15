@@ -29,7 +29,7 @@ class Rooms extends BaseController
         $post = $this->request->getPost(['name', 'capacity', 'price', 'category', 'location']);
         $file = $this->request->getFile('photo');
 
-        if(empty($post['name']) || empty($post['capacity']) || empty($post['price']) || empty($file)) {
+        if(empty($post['name']) || empty($post['capacity']) || empty($post['price'])  || $post['category'] === ''  || empty($post['location']) || empty($file)) {
             return $this->response->setJSON([
                 'success' => false,
                 'result' => 'All Fields are Required!'
@@ -46,8 +46,8 @@ class Rooms extends BaseController
                 'price' => $post['price'],
                 'category' => $post['category'],
                 'location' => $post['location'],
-                'photo' => $newName,
-                'created_at' => date('Y-m-d H:i:s')
+                'created_at' => date('Y-m-d H:i:s'),
+                'photo' => $newName
             ];
         }
 
@@ -55,7 +55,8 @@ class Rooms extends BaseController
 
         return $this->response->setJSON([
             'success' => true,
-            'result' => 'Reserved Successfully!'
+            'result' => 'Added Room Successfully!',
+            'data' => $result
         ]);
     }
 
@@ -64,7 +65,7 @@ class Rooms extends BaseController
         $post = $this->request->getPost(['roomID', 'name', 'capacity', 'price', 'category', 'location']);
         $file = $this->request->getFile('photo');
 
-        if(empty($post['name']) || empty($post['capacity']) || empty($post['price']) || empty($post['location'])) {
+        if(empty($post['name']) || empty($post['capacity']) || empty($post['price'])  || $post['category'] === ''  || empty($post['location'])) {
             return $this->response->setJSON([
                 'success' => false,
                 'result' => 'All Fields are Required!'
@@ -82,8 +83,8 @@ class Rooms extends BaseController
                     'price' => $post['price'],
                     'category' => $post['category'],
                     'location' => $post['location'],
-                    'photo' => $newName,
-                    'updated_at' => date('Y-m-d H:i:s')
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'photo' => $newName
                 ];
             }
         }else {
@@ -93,7 +94,7 @@ class Rooms extends BaseController
                 'price' => $post['price'],
                 'category' => $post['category'],
                 'location' => $post['location'],
-                'updated_at' => date('Y-m-d H:i:s')
+                'created_at' => date('Y-m-d H:i:s')
             ];
         }
 
@@ -107,10 +108,10 @@ class Rooms extends BaseController
 
     public function deleteRoomController()
     {
-        $post = $this->request->getPost(['customerID']);
+        $post = $this->request->getPost(['roomID']);
 
         $data = [
-            'customer_id' => $post['customerID']
+            'room_type_id' => $post['roomID']
         ];
 
         $result = $this->model->deleteRoom($data);

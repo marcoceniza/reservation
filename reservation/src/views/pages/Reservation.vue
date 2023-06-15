@@ -20,12 +20,12 @@
                     <div class="spinner-grow text-muted spinner-grow-sm"></div>
                     <div class="spinner-grow text-muted spinner-grow-sm"></div>
                 </div>
-                <div v-else-if="schedules.length !== 0" class="table-responsive">
+                <div v-else class="table-responsive">
                     <DataTable class="table table-striped" id="myTable">
                         <thead class="table-dark">
                             <tr>
                                 <th>ID</th>
-                                <th>Room Name</th>
+                                <th>Name</th>
                                 <th>Category</th>
                                 <th>Price</th>
                                 <th>Start Date</th>
@@ -51,9 +51,6 @@
                         </tbody>
                     </DataTable>
                 </div>
-                <div v-else class="text-center mt-4">
-                    <p class="text-muted">No Data</p>
-                </div>
             </div>
         </section>
     </div>
@@ -64,7 +61,7 @@
             <div class="modal-content">
 
             <div class="modal-header">
-                <h5 class="modal-title"><i class="bi bi-list-check"></i> Room Details</h5>
+                <h5 class="modal-title"><i class="bi bi-list-check"></i> Details</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
@@ -76,11 +73,11 @@
                     <li class="list-group-item">Capacity: {{ viewReserve.capacity }} pax</li>
                     <li class="list-group-item">Price: ${{ viewReserve.price }}</li>
                     <li class="list-group-item">Category: {{ formatCategory(viewReserve.category) }}</li>
-                    <li class="list-group-item">Location: {{ viewReserve.price }}</li>
+                    <li class="list-group-item">Location: {{ viewReserve.location }}</li>
                     <li class="list-group-item">Reserved Date: {{ formatDate(viewReserve.reserved_date) }}</li>
                     <li class="list-group-item">Start Date: {{ formatDate(viewReserve.start_date) }}</li>
                     <li class="list-group-item">End Date: {{ formatDate(viewReserve.end_date) }} </li>
-                    <li class="list-group-item">Status: {{ formatStatus(viewReserve.status, viewReserve.start_date) }} </li>
+                    <li class="list-group-item">Status: {{ formatStatus(viewReserve.start_date, viewReserve.end_date) }} </li>
                 </ul>
 
                 <h5 class="mt-4 mb-3"><i class="bi bi-info-circle-fill"></i> Customer Info</h5>
@@ -128,7 +125,7 @@
                                 <span class="spinner-grow spinner-grow-sm"></span>
                                 Updating...
                             </button>
-                            <button v-else @click.prevent="updateDateSchedule" type="submit" class="btn btn-primary btn-block">Submit</button>
+                            <button v-else @click.prevent="updateDateSchedule" type="submit" class="btn btn-primary btn-block">Update</button>
                         </div>
                     </form> 
                 </div>
