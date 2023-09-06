@@ -9,7 +9,7 @@ import App from './App.vue'
 import router from './router'
 
 const axiosRes = axios.create({
-    baseURL: 'http://localhost:8080'
+    baseURL: 'https://dating-app2023.000webhostapp.com/reservationAPI'
 });
 
 export default axiosRes;

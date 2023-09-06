@@ -162,7 +162,7 @@ export default {
             schedules: '',
             getUpdateID: '',
             getConfirmDeleteID: '',
-            photoBaseURL: 'http://localhost:8080/uploads/',
+            photoBaseURL: 'https://dating-app2023.000webhostapp.com/reservationAPI/uploads/',
             currentDate: new Date()
         }
     },
